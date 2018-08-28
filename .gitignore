@@ -1,3 +1,8 @@
+# node_modules 제외
 node_modules/
-npm-debug.log
-db-config.json
+
+# build 된 파일 제외
+build/
+
+# npm-debug.log
+# db-config.json
