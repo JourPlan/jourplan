@@ -46,38 +46,161 @@
 
 	/* WEBPACK VAR INJECTION */(function(module) {'use strict';
 
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Hello = __webpack_require__(158);
-
-	var _Hello2 = _interopRequireDefault(_Hello);
+	__webpack_require__(159);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	(function () {
-	  var enterModule = __webpack_require__(160).enterModule;
+		var enterModule = __webpack_require__(160).enterModule;
 
-	  enterModule && enterModule(module);
+		enterModule && enterModule(module);
 	})();
 
-	var root = document.getElementById("root");
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	_react2.default.render(_react2.default.createElement(_Hello2.default, null), root);
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	// Parent Component
+	var Hello = function (_React$Component) {
+		_inherits(Hello, _React$Component);
+
+		function Hello() {
+			_classCallCheck(this, Hello);
+
+			var _this = _possibleConstructorReturn(this, (Hello.__proto__ || Object.getPrototypeOf(Hello)).apply(this, arguments));
+
+			_this.state = {
+				mans: []
+			};
+			return _this;
+		}
+
+		_createClass(Hello, [{
+			key: 'componentDidMount',
+			value: function componentDidMount() {
+				var _this2 = this;
+
+				console.log("aaaaaaaaaaaaa");
+				fetch('/man', {
+					method: 'get',
+					dataType: 'json',
+					headers: {
+						'Accept': 'application/json',
+						'Content-Type': 'application/json'
+					}
+				}).then(function (response) {
+					return response.json();
+				}).then(function (responseData) {
+					_this2.setState({ mans: responseData });
+				}).catch(function (error) {
+					console.log('Error fetching man', error);
+				});
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				var mans = this.state.mans.map(function (man) {
+					return _react2.default.createElement(Guy, {
+						name: man.MEM_INFO_ID,
+						age: man.MEM_EMAIL
+					});
+				});
+
+				return _react2.default.createElement(
+					'div',
+					null,
+					_react2.default.createElement(
+						'h1',
+						null,
+						'CalyFactory Developers'
+					),
+					_react2.default.createElement(
+						'ul',
+						null,
+						_react2.default.createElement(
+							'li',
+							null,
+							'22233355',
+							mans
+						)
+					)
+				);
+			}
+		}, {
+			key: '__reactstandin__regenerateByEval',
+			// @ts-ignore
+			value: function __reactstandin__regenerateByEval(key, code) {
+				// @ts-ignore
+				this[key] = eval(code);
+			}
+		}]);
+
+		return Hello;
+	}(_react2.default.Component);
+
+	// Child Component
+
+
+	var Guy = function (_React$Component2) {
+		_inherits(Guy, _React$Component2);
+
+		function Guy() {
+			_classCallCheck(this, Guy);
+
+			return _possibleConstructorReturn(this, (Guy.__proto__ || Object.getPrototypeOf(Guy)).apply(this, arguments));
+		}
+
+		_createClass(Guy, [{
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(
+					'li',
+					null,
+					this.props.name,
+					', age is ',
+					this.props.age,
+					'. create time : ',
+					this.props.createDateTime
+				);
+			}
+		}, {
+			key: '__reactstandin__regenerateByEval',
+			// @ts-ignore
+			value: function __reactstandin__regenerateByEval(key, code) {
+				// @ts-ignore
+				this[key] = eval(code);
+			}
+		}]);
+
+		return Guy;
+	}(_react2.default.Component);
+	// export default Hello;
+
+	var root = document.getElementById("mainDiv");
+	_react2.default.render(_react2.default.createElement(Hello, null), root);
 	;
 
 	(function () {
-	  var reactHotLoader = __webpack_require__(160).default;
+		var reactHotLoader = __webpack_require__(160).default;
 
-	  var leaveModule = __webpack_require__(160).leaveModule;
+		var leaveModule = __webpack_require__(160).leaveModule;
 
-	  if (!reactHotLoader) {
-	    return;
-	  }
+		if (!reactHotLoader) {
+			return;
+		}
 
-	  reactHotLoader.register(root, 'root', 'C:/jourplan/src/js/main/App2.js');
-	  leaveModule(module);
+		reactHotLoader.register(Hello, 'Hello', 'C:/jourplan/src/js/plan/Hello.js');
+		reactHotLoader.register(Guy, 'Guy', 'C:/jourplan/src/js/plan/Hello.js');
+		reactHotLoader.register(root, 'root', 'C:/jourplan/src/js/plan/Hello.js');
+		leaveModule(module);
 	})();
 
 	;
@@ -20569,175 +20692,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ }),
-/* 158 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(module) {'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	__webpack_require__(159);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	(function () {
-		var enterModule = __webpack_require__(160).enterModule;
-
-		enterModule && enterModule(module);
-	})();
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	// Parent Component
-	var Hello = function (_React$Component) {
-		_inherits(Hello, _React$Component);
-
-		function Hello() {
-			_classCallCheck(this, Hello);
-
-			var _this = _possibleConstructorReturn(this, (Hello.__proto__ || Object.getPrototypeOf(Hello)).apply(this, arguments));
-
-			_this.state = {
-				mans: []
-			};
-			return _this;
-		}
-
-		_createClass(Hello, [{
-			key: 'componentDidMount',
-			value: function componentDidMount() {
-				var _this2 = this;
-
-				console.log("aaaaaaaaaaaaa");
-				fetch('/man', {
-					method: 'get',
-					dataType: 'json',
-					headers: {
-						'Accept': 'application/json',
-						'Content-Type': 'application/json'
-					}
-				}).then(function (response) {
-					return response.json();
-				}).then(function (responseData) {
-					_this2.setState({ mans: responseData });
-				}).catch(function (error) {
-					console.log('Error fetching man', error);
-				});
-			}
-		}, {
-			key: 'render',
-			value: function render() {
-				var mans = this.state.mans.map(function (man) {
-					return _react2.default.createElement(Guy, {
-						name: man.MEM_INFO_ID,
-						age: man.MEM_EMAIL
-					});
-				});
-
-				return _react2.default.createElement(
-					'div',
-					null,
-					_react2.default.createElement(
-						'h1',
-						null,
-						'CalyFactory Developers'
-					),
-					_react2.default.createElement(
-						'ul',
-						null,
-						_react2.default.createElement(
-							'li',
-							null,
-							'22233355',
-							mans
-						)
-					)
-				);
-			}
-		}, {
-			key: '__reactstandin__regenerateByEval',
-			// @ts-ignore
-			value: function __reactstandin__regenerateByEval(key, code) {
-				// @ts-ignore
-				this[key] = eval(code);
-			}
-		}]);
-
-		return Hello;
-	}(_react2.default.Component);
-
-	// Child Component
-
-
-	var Guy = function (_React$Component2) {
-		_inherits(Guy, _React$Component2);
-
-		function Guy() {
-			_classCallCheck(this, Guy);
-
-			return _possibleConstructorReturn(this, (Guy.__proto__ || Object.getPrototypeOf(Guy)).apply(this, arguments));
-		}
-
-		_createClass(Guy, [{
-			key: 'render',
-			value: function render() {
-				return _react2.default.createElement(
-					'li',
-					null,
-					this.props.name,
-					', age is ',
-					this.props.age,
-					'. create time : ',
-					this.props.createDateTime
-				);
-			}
-		}, {
-			key: '__reactstandin__regenerateByEval',
-			// @ts-ignore
-			value: function __reactstandin__regenerateByEval(key, code) {
-				// @ts-ignore
-				this[key] = eval(code);
-			}
-		}]);
-
-		return Guy;
-	}(_react2.default.Component);
-
-	var _default = Hello;
-	exports.default = _default;
-	;
-
-	(function () {
-		var reactHotLoader = __webpack_require__(160).default;
-
-		var leaveModule = __webpack_require__(160).leaveModule;
-
-		if (!reactHotLoader) {
-			return;
-		}
-
-		reactHotLoader.register(Hello, 'Hello', 'C:/jourplan/src/js/main/Hello.js');
-		reactHotLoader.register(Guy, 'Guy', 'C:/jourplan/src/js/main/Hello.js');
-		reactHotLoader.register(_default, 'default', 'C:/jourplan/src/js/main/Hello.js');
-		leaveModule(module);
-	})();
-
-	;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)(module)))
-
-/***/ }),
+/* 158 */,
 /* 159 */
 /***/ (function(module, exports) {
 

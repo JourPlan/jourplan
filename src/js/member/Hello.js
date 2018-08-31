@@ -55,12 +55,9 @@ class Guy extends React.Component {
 	render() {
 		return (
 			<li>
-				{this.props.name}, age2 is {this.props.age}. create time : {this.props.createDateTime}
+				{this.props.name}, age is {this.props.age}. create time : {this.props.createDateTime}
 			</li>
 		);
 	}
 }
-// export default Hello;
-
-const root = document.getElementById("mainDiv")
-React.render(<Hello />, root);
+export default Hello;

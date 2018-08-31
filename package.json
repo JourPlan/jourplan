@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "set NODE_ENV=production&&node ./build/app.js",
-    "development": "set NODE_ENV=development&&node ./build/app.js",
+    "development": "node ./scripts/development.js",
     "clean": "rm -rf build public/bundle.js",
     "build": "babel server --out-dir build --presets=es2015 && webpack"
   },
@@ -21,14 +21,16 @@
     "nodemon": "^1.18.3",
     "react-hot-loader": "^4.3.5",
     "webpack": "^1.12.*",
-    "webpack-dev-server": "^1.10.*"
+    "webpack-dev-server": "^1.10.*",
+    "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
-    "react": "^0.13.*",
     "babel-polyfill": "~6.7.*",
     "body-parser": "^1.17.1",
     "express": "^4.14.1",
     "mysql": "^2.11.1",
+    "prop-types": "^15.6.2",
+    "react": "^0.13.*",
     "react-dom": "^15.0.0",
     "whatwg-fetch": "^0.11.0"
   }

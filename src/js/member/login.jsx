@@ -1,11 +1,12 @@
 /* 기본 import */
-import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
+
+import React, { Component }  from 'react';
+// import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import jQuery from 'jquery';
+import 'whatwg-fetch';
 
 /* 전역변수 */
-const { render } = ReactDOM;
+// const { render } = ReactDOM;
 
 /*************************
  * Login
@@ -97,7 +98,7 @@ class Login extends React.Component {
                         <div className="login-header">
                             <a href="javascript:;" onClick={(e) => this.clickMemberMain(e)}>
                                 <h1>
-                                    JourPlan
+                                    JourPlan23
                                 </h1>
                             </a>
                         </div>
@@ -113,7 +114,7 @@ class Login extends React.Component {
                             </div>
                         </div>
                         <div className="login-footer">
-                            <p className="login-p-down">앱을 다운로드 하세요.</p>
+                            <p className="login-p-down">앱을 다운로드 하세요.222</p>
                             <div className="login-app">
                                 <a className="login-app-a" href="#">
                                     <img className="login-app-img" alt="App store에서 이용가능" src="../../../assets/images/apple.png" />
@@ -151,5 +152,21 @@ Login.defaultProps = {
 };
 
 /* ReactElements 컴파일 */
-const root = document.querySelector('div#mainDiv');
-render(<Login/>, root);
+// const root = document.querySelector('div#mainDiv');
+const root = document.getElementById("mainDiv")
+React.render(
+        <Login/>, root);
+
+// if (module.hot) {
+//     module.hot.accept('./Login', () => {
+//          ReactDOM.render(
+//              <AppContainer>
+//                 <Login/>
+//              </AppContainer>, root
+//          );
+//      });
+
+// }
+
+
+// React.render(hot(module)(Login), root);
