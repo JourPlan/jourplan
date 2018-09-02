@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import 'whatwg-fetch'
 import '../../../css/login.css'
 import { hot } from 'react-hot-loader'
-import { Link } from 'react-router-dom'
+import {Redirect, Link} from 'react-router-dom'
 
 /* 전역변수 */
 // const { render } = ReactDOM;
@@ -60,8 +60,8 @@ class Login extends React.Component {
         const loginPassword = this.state.login.password;
 
         if (loginId == 'admin' && loginPassword == 'admin'){
-            // location.href='/main';
-            this.setState({path: '/main'})
+            location.href='/main';
+            // this.setState({path: '/main'})
         } else {
             alert('아이디 비밀번호를 확인하세요.')
         }
@@ -97,7 +97,7 @@ class Login extends React.Component {
 
     render() {
         if (this.state.path) {
-            return <Link to={this.state.path} />
+            return <Redirect to={this.state.path} />
         }
         return (
             <div className="back-box-img">
