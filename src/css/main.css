@@ -1,0 +1,488 @@
+@CHARSET "UTF-8";
+@IMPORT url("./base.css");
+
+
+/*
+    설명 : main용 헤더 메인쪽만 글씨가 흰색이기 때문에 따로 선언한다.
+*/
+.header-main {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+	box-shadow: 0px 2px 2px  rgba(0, 0, 0, 0); 
+}
+
+
+/*
+    설명 : 메인쪽 로고
+*/
+.main-logo h1{
+    color: #ffffff;
+}
+
+.main-header-btn {
+    
+	position: absolute;
+	width: 238px;
+	right: 0px;
+	top: 0px;
+    height:inherit;
+    padding-right: 40px;
+}
+
+
+
+/*
+    설명 : 메인쪽은 뒷배경 이미지가 있어서 height를 min-height로 준다. 그래야지 창 사이즈를 줄여도
+          화면 아래 흰색 배경이 안생김.
+*/
+.main-section {
+    /*background: blue;*/
+
+
+    position: absolute;   
+    min-width: 1079px;
+    min-height: 700px;
+	
+	
+    top: 0;               
+    bottom: 0;            
+    left: 0;              
+    right: 0;             
+    margin: auto;     /* 추가 */
+    margin-top: 98px;
+}
+
+.main-article {
+    background:  rgba(0, 0, 0, 0);
+}
+
+
+/*
+    설명 : main 검색 div 
+*/
+.main-search {
+    height: 291px;
+    width: 1079px;
+    margin: auto;
+	/*border-bottom: #ccc solid 1px;*/
+	/*background-color: red;*/
+    position: relative;
+}
+
+
+/*
+    설명 : main 검색 영역에서 글씨 부분.
+*/
+.main-search-top {
+    /*position: absolute;*/
+    top: 0px;
+    width : 726px;
+    height: 133px;
+    /*background-color: aquamarine;*/
+    margin: auto;
+
+    
+}
+.main-search-top h1{
+    /*font-family:'Noto Sans KR';*/
+    color: #ffffff !important;
+    font-weight: 800 !important;
+    text-shadow: 1px 1px 40px rgba(22, 23, 31, 0.4) !important;
+
+    box-sizing: border-box;
+    display: block;
+
+    /*font-size: 44px;*/
+    font-size: 38px;
+    font-weight: normal;
+}
+
+/*
+    설명 : main 검색 영역에서 검색 input 부분
+*/
+.main-search-bottom {
+    position: absolute;
+    top: 133px;
+    width: inherit;
+    height: 158px;
+    /*background-color: yellowgreen;*/
+}
+
+.main-search-btn {
+    position: absolute;
+    width: 92px;
+    height: 52px;
+    left: 798px;
+    top: 10px;
+    
+    font-size: 17px;
+    font-weight: 800;
+
+}
+.main-search-input-div {
+    width : 730px;
+    height: 72px;
+    background: #fafafa;
+    /*box-shadow: 0px 0px 20px 10px rgba(22, 23, 31, 0.3);*/
+    box-shadow: 0px 0px 30px 2px rgba(22, 23, 31, 0.4);
+    margin: auto;     /* 추가 */
+}
+/*
+    설명 : main 에서 검색 input 컴포넌트 길이 set 및 가운데 정렬
+*/
+.main-search-input {
+    width : 585px;
+    height: 60px;
+    font-size: 18px;
+    font-weight: 800;
+    color: #484848;
+    background-color: #fafafa;
+    
+    margin: auto;     /* 추가 */
+    margin-left: 0px;
+    border:none;
+    border-right:0px; 
+    border-top:0px; 
+    border-left:0px; 
+    border-bottom:0px;
+    
+}
+
+.main-bar {
+    border: 0;
+    height: 2px;
+    background: #ffffff;
+    width: inherit;
+    margin-top: 75px;
+    box-shadow: 0px 0px 30px 2px rgba(22, 23, 31, 0.3);
+    /*border: 1px;
+    height: 1px;
+    width: 285px;
+    margin: auto;     
+    margin-top: 16px;*/
+}
+
+
+
+/*
+    설명 : main 에서 신규 플랜 등록 div
+*/
+.main-new {
+	min-height: 350px;
+    min-width: 1079px;
+    margin: auto;
+	/*border-bottom: #ccc solid 1px;*/
+	/*background-color: green;*/
+    position: relative;
+    float: left;
+    /*font-family:'SangSangAnt';*/
+}
+
+/*
+    설명 : main에서 신규플랜 왼쪽정렬
+*/
+.main-new div {
+    float: left;
+
+}
+
+/*
+    설명 : main 신규플랜 국내여행 등록 div
+*/
+.main-new-left {
+    position: relative;
+    width: 539px;
+    height: 350px;
+    /*border-right: 1px solid #ffffff;*/
+    /*background-color: violet;*/
+}
+
+.main-new-bar {
+    position: absolute;
+    width: 1px;
+    height: 220px;
+    right: 0px;
+    border-right: 2px solid #ffffff;
+    box-shadow: 0px 0px 30px 2px rgba(22, 23, 31, 0.3);
+    top:65px;
+}
+
+
+/*
+    설명 : main 신규플랜 해외여행 등록 div
+*/
+.main-new-right {
+    position: relative;
+    width: 539px;
+    height: 350px;
+    /*background-color: teal;*/
+}
+
+
+
+/*****************************/
+/******** 국내여행 css ********/
+/*****************************/
+.main-dome {
+    position: absolute;   
+    width: 280px;
+    height: 250px;
+    
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0px 0px 30px 2px rgba(22, 23, 31, 0.3);
+	/*background: red;
+	opacity: 0.5;*/
+    top: 0;               
+    bottom: 0;            
+    left: 0;              
+    right: 0;     
+    
+    margin: auto;     /* 추가 */
+    margin-left: 174px;        
+}
+
+.main-dome1 {
+    position: relative;
+    
+    width: inherit;
+    height: 90px;
+}
+.main-dome1-div {
+    /*background: url(../image/domestic.png) no-repeat;*/
+    /*글씨까지 이미지한css*/
+    position: absolute;
+    width : 210px;
+    height: 66px;
+    top: 0;               
+    bottom: 0;            
+    left: 0;              
+    right: 0;   
+    margin: auto;     
+    margin-bottom: 0px;
+
+    
+
+}
+
+.main-dome1-h1 {
+    /*background: yellowgreen;*/
+    float: left;
+    width : 139px;
+    height: 66px;
+    
+    
+}
+.main-dome1-h1 > h1 {
+    margin: auto;
+    margin-left: 13px;
+    margin-top: 15px;
+    font-size: 34px;
+    font-weight: 800 !important;
+    color: #111;
+
+}
+.main-dome1-png {
+    /*background: navy;*/
+    width : 71px;
+    height: 66px;
+}
+
+.main-dome1-png > img {
+    
+    width : 71px;
+    height: 66px;
+}
+
+.main-dome2 {
+    /*background: sienna;*/
+    position: relative;
+    width: inherit;
+    height: 70px;
+}
+
+.main-dome2-div1 {
+    
+    position: absolute;
+    
+    top: 0;               
+    bottom: 0;            
+    left: 0;              
+    right: 0;   
+    margin: auto;     
+    margin-top: 5px;
+    width : 85px;
+    height: 30px;
+    /*background: firebrick*/
+}
+
+.main-dome2-div1 > h1 {
+
+    font-size: 17px;
+    font-weight: 400 !important;
+    color: #111;
+}
+
+.main-dome2-div2 {
+    position: absolute;
+    
+    top: 0;               
+    bottom: 0;            
+    left: 0;              
+    right: 0;   
+    margin: auto;     
+    margin-top: 35px;
+    width : 182px;
+    height: 33px;
+    /*background: forestgreen;*/
+}
+
+.main-dome2-div2 > h1 {
+
+    font-size: 17px;
+    font-weight: 500 !important;
+    color: #111;
+}
+
+
+/*****************************/
+/******** 해외여행 css ********/
+/*****************************/
+
+.main-inter {
+    position: absolute;   
+    width: 280px;
+    height: 250px;
+    
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0px 0px 30px 2px rgba(22, 23, 31, 0.3);
+	/*background: red;
+	opacity: 0.5;*/
+    top: 0;               
+    bottom: 0;            
+    left: 0;              
+    right: 0;             
+    margin: auto;     /* 추가 */
+    margin-left: 85px;
+}
+
+.main-inter1 {
+    position: relative;
+    
+    width: inherit;
+    height: 90px;
+}
+.main-inter1-div {
+    /*background: url(../image/domestic.png) no-repeat;*/
+    /*글씨까지 이미지한css*/
+    position: absolute;
+    width : 210px;
+    height: 66px;
+    top: 0;               
+    bottom: 0;            
+    left: 0;              
+    right: 0;   
+    margin: auto;     
+    margin-bottom: 0px;
+
+    
+
+}
+
+.main-inter1-h1 {
+    /*background: yellowgreen;*/
+    float: left;
+    width : 139px;
+    height: 66px;
+    
+    
+}
+.main-inter1-h1 > h1 {
+    margin: auto;
+    margin-left: 13px;
+    margin-top: 15px;
+    font-size: 34px;
+    font-weight: 800 !important;
+    color: #111;
+
+}
+.main-inter1-png {
+    /*background: navy;*/
+    width : 71px;
+    height: 66px;
+}
+
+.main-inter1-png > img {
+    
+    width : 71px;
+    height: 66px;
+}
+
+.main-inter2 {
+    /*background: sienna;*/
+    position: relative;
+    width: inherit;
+    height: 70px;
+}
+
+.main-inter2-div1 {
+    
+    position: absolute;
+    
+    top: 0;               
+    bottom: 0;            
+    left: 0;              
+    right: 0;   
+    margin: auto;     
+    margin-top: 5px;
+    width : 108px;
+    height: 30px;
+}
+
+.main-inter2-div1 > h1 {
+
+    font-size: 17px;
+    font-weight: 400 !important;
+    color: #111;
+}
+
+.main-inter2-div2 {
+    position: absolute;
+    
+    top: 0;               
+    bottom: 0;            
+    left: 0;              
+    right: 0;   
+    margin: auto;     
+    margin-top: 35px;
+    width : 182px;
+    height: 33px;
+    /*background: forestgreen;*/
+}
+
+.main-inter2-div2 > h1 {
+
+    font-size: 17px;
+    font-weight: 500 !important;
+    color: #111;
+}
+
+
+
+
+
+.main-new-btn-div {
+    /*background: violet;*/
+
+    width: inherit;
+    height: 90px;    
+}
+
+.main-new-btn {
+    width : 233px;
+    height: 47px;
+    margin: auto;     /* 추가 */
+    margin-top: 23px;
+    
+    font-size: 17px;
+    font-weight: 600;
+}

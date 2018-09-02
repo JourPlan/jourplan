@@ -1,0 +1,602 @@
+
+@IMPORT url("./reset.css");
+
+@font-face {
+	font-family :"Eufoniem";
+	src: url(../font/Eufoniem.ttf) format("ttf");
+	src: url(../font/Eufoniem.woff) format("woff");
+}
+@font-face {
+	font-family:'Noto Sans KR';
+	font-style:normal;
+	font-weight:400;
+	src: url(../font/NotoSansKR-Regular.woff2) format('woff2'),
+		 url(../font/NotoSansKR-Regular.woff) format('woff'),
+		 url(../font/NotoSansKR-Regular.otf) format('opentype');
+ }
+ @font-face {
+	font-family:'Noto Sans KR';
+	font-style:normal;
+	font-weight:500;
+	src: url(../font/NotoSansKR-Medium.woff2) format('woff2'),
+		 url(../font/NotoSansKR-Medium.woff) format('woff'),
+		 url(../font/NotoSansKR-Medium.otf) format('opentype');
+ }
+ @font-face {
+	font-family:'Noto Sans KR';
+	font-style:normal;
+	font-weight:700;
+	src: url(../font/NotoSansKR-Bold.woff2) format('woff2'),
+		 url(../font/NotoSansKR-Bold.woff) format('woff'),
+		 url(../font/NotoSansKR-Bold.otf) format('opentype');
+ }
+
+ @font-face {
+	font-family:'SangSangAnt';
+	font-style:normal;
+	src: url(../font/SangSangAnt.woff) format('woff'),
+		 url(../font/SangSangAnt.otf) format('opentype');	 
+		 
+ }
+ 
+
+
+
+input[type=checkbox], input[type=radio] {
+    margin: 4px 0 0;
+	line-height: normal;
+	box-sizing: border-box;
+	padding: 0;
+	-webkit-appearance: checkbox;
+}
+
+body{
+	font-size: 12px;
+	font-family: 맑은 고딕;
+	color: #737373;
+	background-color: #FAFAFA;
+}
+.hidden{
+	display : none;
+}
+a:link { 
+	text-decoration: none; 
+	color:#333;
+}
+a:active{ 
+	text-decoration: none;  
+	color:#333;
+}
+a:visited { 
+	text-decoration: none;
+	color:#333;
+}
+a:hover { 
+	text-decoration: none; 
+	color:#333;
+	
+}  
+a {
+	outline:none; 
+	/*select-dummy: expression(this.hideFocus=true);*/
+}
+a:-webkit-any-link {
+	cursor: pointer;
+}
+
+p {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+.hidden {
+	display:none; 
+}
+
+.float-left {
+	float: left;
+}
+body,input,select,textarea,button,label {font-size:13px;font-family:'Noto Sans KR','Malgun Gothic',Dotum,sans-serif;color:#333;}
+
+textarea {
+	resize: none;
+}
+/****************************************************/
+
+
+
+
+/*
+    설명 : 로그인, 회원가입, 메인페이지 뒷배경 css 
+*/
+.back-box-img {
+	position:  absolute !important;
+	width: 100% !important;
+	height: 100vh !important;
+	min-height: 800px;
+	min-width: 1079px;
+	background: url(../images/mainBack.jpg) no-repeat center;
+	background-size: cover !important;
+
+}
+
+
+
+/*
+    설명 : form 기본 관련 css
+*/
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+	line-height: inherit;
+	outline: none;
+}
+
+/*
+    설명 : form-control(input, select, textarea 관련 css
+*/
+.form-control {
+	border-radius: 0;
+	box-shadow: none;
+	/*border-color: #d2d6de;*/
+	/*border-color: red;*/
+
+	display: block;
+	width: 100%;
+	height: 25px;
+	padding: 6px 12px;
+	font-size: 12px;
+	line-height: 1.4285;
+	
+	/* background-color: #FAFAFA; */
+	background-color: #ffffff;
+	/* border: 1px solid #EAEAEA; */
+    border: solid 1px #dbdbdb;
+	/*-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);*/
+	-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+
+}
+
+/*
+    설명 : form에서 focus될때 css
+*/
+.form-control:focus:not(.form-readOnly)  {
+	/*border-color:#66afe9;*/  /*파란색*/
+	/*border-color: #3D9970;*/ /*올리브색*/
+	border-color: #2A6F50;
+	
+	outline:0;
+	/*-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+	box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)*/
+}
+
+/*
+    설명 : form btn관련 css
+*/
+.form-readOnly {
+	background-color: #F2F2F2;
+    border: solid 1px #F2F2F2;
+}
+
+
+/*
+    설명 : form btn관련 css
+*/
+.form-btn {
+	border-radius: 3px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+	border: 1px solid transparent;
+	
+	display: block;
+    /*display: inline-block;*/
+    padding: 6px 12px;
+    /*margin-bottom: 0;*/
+	/*text-align: center;*/
+	/*vertical-align: middle;*/
+	font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    white-space: nowrap;
+    
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+	width: 100%;
+
+	/* 버튼 둥근네모 없애는 부분*/
+	border-radius: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border-width: 1px;
+}
+
+/*
+    설명 : navy 배경색
+*/
+.bg-navy {
+	background-color: #001f3f !important;
+	color: #fff;
+}
+
+/*
+    설명 : olive 배경색
+*/
+.bg-olive {
+	background-color: #3D9970 !important;
+	color : #fff;
+}
+
+/*
+    설명 : yellow 배경색
+*/
+.bg-yellow {
+	background-color: #FFFCAF !important;
+	color : #fff;
+}
+
+/*
+    설명 : 버튼 마우스오버시 안으로 그림자(20%) 넣기.
+*/
+.form-btn[class*='bg-']:hover {
+    -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,0.2);
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.2);
+}
+
+/*
+    설명 : 버튼 마우스 클릭 안으로 그림자(50%) 넣기.
+*/
+.form-btn[class*='bg-']:active {
+	-webkit-box-shadow: inset 0 0 100px rgba(0,0,0,0.5);
+	box-shadow: inset 0 0 100px rgba(0,0,0,0.5);
+	/*-webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+    -moz-box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+	box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);*/
+    /*outline: none;*/
+	color: #fff;
+    background-color: black;
+    /*border-color: red;*/
+}
+
+
+
+/*----------- 공통 end------------ */
+
+
+
+
+/*----------- header 메뉴. start ------------ */
+
+header{
+	
+	/*background-color: #fff;
+	border-bottom: 1px solid rgba(0,0,0,.0975);*/
+	
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    -webkit-transition: height .2s ease-in-out;
+	transition: height .2s ease-in-out;
+	height:75px;
+	-webkit-box-align: center;
+	align-items: center;
+	
+	background: rgba(255, 255, 255, 0.85);
+	box-shadow: 0px 1px 0px  #e6e6e6; 
+	/* !important;*/	
+}
+
+.header-div {
+	display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    height: 75px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    max-width: 1079px;
+    /*padding: 26px 40px;*/
+    -webkit-transition: height .2s ease-in-out;
+    transition: height .2s ease-in-out;
+	width: 100%;
+	
+	-webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+	margin: auto;
+	/*position: relative;
+	width: 1079px;
+	margin: auto;
+	height:inherit;*/
+	position: relative;
+	/*background-color: red;*/
+}
+
+/*
+    설명 : header 로고
+*/
+.header-logo {
+	/*background-color: green;*/
+	position: absolute;
+	width: 250px;
+	left: 0px;
+	top:0px;
+	
+	
+	/*
+	-webkit-box-flex: 1;
+    -webkit-flex: 1 9999 0%;
+    -ms-flex: 1 9999 0%;
+    flex: 1 9999 0%;
+	width:332px;*/
+	
+	/*background-color: yellow;*/
+	
+}
+.header-logo h1{
+	
+	font-family: "Eufoniem";
+	font-size: 40pt;
+	font-weight: normal;
+	color: #000000;
+	padding-top: 11px;
+	padding-left: 55px;
+}
+
+/*
+    설명 : header 조회
+*/
+.header-search {
+	/*background-color: orange;*/
+
+	position: absolute;
+	width: 591px;
+	left: 250px;
+	top: 0px;
+	height:inherit;
+	
+}
+
+.form-header-search {
+	
+	width : 300px;
+    height: 20px;
+    font-size: 14px;
+    /*box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, .5);*/
+	margin: auto;     /* 추가 */
+	margin-top: 20px;
+	
+    /* border: solid 1px #dbdbdb; */
+}
+
+/*
+    설명 : header 버튼들.
+*/
+.header-btn {
+	/*background-color: blue;*/
+
+	position: absolute;
+	width: 238px;
+	left: 841px;
+	top: 0px;
+	height:inherit;
+}
+
+.header-btn-div {
+	float: left;
+	padding-left: 5px;
+	width: 54px;
+}
+
+.header-btn-plan {
+	padding-top: 22px;
+	padding-left: 5px;
+	width: 28px;
+	height: 28px;
+}
+.header-btn-add {
+	padding-top: 23px;
+	padding-left: 9px;
+	width: 25px;
+	height: 25px;
+}
+.header-btn-notice {
+	padding-top: 17px;
+	padding-left: 5px;
+	width: 36px;
+	height: 36px;
+}
+.header-btn-setting {
+	padding-top: 17px;
+	padding-left: 5px;
+	width: 36px;
+	height: 36px;
+}
+
+
+
+/*----------- header 메뉴. end ------------ */
+
+
+/*----------- section 영역. start ------------ */
+section {
+	/*background-color: gray;*/
+
+
+
+	position: relative;
+	display: block;
+	margin-top: 76px;
+	min-height: 700px;
+	/*width: 100%;	
+	top: 300px;*/
+
+	/*position: fixed;
+    top: 0;
+    width: 100%;
+    -webkit-transition: height .2s ease-in-out;
+	transition: height .2s ease-in-out;
+	height:75px;
+	-webkit-box-align: center;
+	align-items: center;*/
+	/*background-color: #ffffff;
+	box-shadow: 0px 1px 0px  #e6e6e6; */
+}
+
+article {
+	background-color: #ffffff;
+	
+	width: 1079px;
+    margin: auto;
+    min-height: inherit;
+	/*box-shadow: -2px 2px 4px rgba(0, 0, 0, .04);*/
+	/*top: 76px;*/
+    /*border-radius: 8px;*/
+    position: relative;
+	display: block;
+}
+
+/*----------- section 영역. end ------------ */
+
+
+/*----------- setting pop 영역. start ------------ */
+
+.setting-pop-background {
+	
+	-webkit-box-align: stretch;
+	-webkit-align-items: stretch;
+	-ms-flex-align: stretch;
+	align-items: stretch;
+	border: 0 solid #000;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-flex-shrink: 0;
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	z-index: 200;
+	
+}
+
+.setting-pop-div {
+
+	-webkit-overflow-scrolling: touch;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	background-color: rgba(0,0,0,.5);
+	bottom: 0;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+
+	-webkit-justify-content: space-around;
+	/* -ms-flex-pack: center; */
+	justify-content: space-around;
+	/* -webkit-box-pack: center; */
+
+	left: 0;
+	overflow-y: auto;
+	position: fixed;
+	right: 0;
+	top: 0;
+
+	display:flex;
+
+}
+
+
+.setting-pop-center-box {
+	position: relative;   
+	width: 400px;
+	margin: 0 auto;     
+}
+
+
+.setting-pop-center-back {
+	position: relative;
+	width: 400px;
+
+}
+
+.setting-pop-button {
+/* background: rgba(255, 255, 255, 0.2); */
+	background-color: #ffffff;
+	/* border-bottom: 0; */
+	border-left: 0;
+	border-right: 0;
+	border-top:0;
+	border-bottom: 1px solid #efefef;
+	cursor: pointer;
+	line-height: 48px;
+	width: inherit;
+	margin: 0;
+	text-align: center;
+	font-size: 14px;
+}
+
+.setting-pop-button:only-child {
+    border-top: none;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.setting-pop-button:first-of-type {
+	
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+.setting-pop-button:last-of-type {
+    border-bottom-left-radius: 12px; 
+    border-bottom-right-radius: 12px;
+}
+
+.setting-pop-button:hover {
+	text-decoration: underline;
+}
+
+/*----------- setting pop 영역. end ------------ */
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,214 @@
+
+@IMPORT url("./base.css");
+
+/*
+    설명 : Login에서 가운데 영역box
+*/
+.login-center-box {
+    position: absolute;   
+    width: 355px;
+    height: 465px;
+	/*background: red;
+	opacity: 0.5;*/
+    top: 0;               
+    bottom: 0;            
+    left: 0;              
+    right: 0;             
+    margin: auto;     /* 추가 */
+}
+
+
+/*
+    설명 : Login에서 실제 컴포넌트들이 들어갈 box
+*/
+.login-center-back {
+	position: relative;
+	width: 355px;
+    height: 465px;
+    /*background: rgba(255, 255, 255, 0.83);*/
+    /*opacity: 0.5;*/
+    
+}
+
+/*****************************
+*********** header ***********
+*****************************/
+/*
+    설명 : Login에서 실제 컴포넌트들이 들어갈 box
+*/
+.login-header {
+    position: absolute;
+    width: 355px;
+    height: 142px;
+    /*background: gray;*/
+    background: rgba(255, 255, 255, 0.85);
+    top : 0px;
+}
+
+/*
+    설명 : Login 로고글씨
+*/
+.login-header h1{
+    font-family: "Eufoniem";
+    font-size: 60pt;
+    color: black;
+    padding-top: 26px;
+    text-align: center;
+    
+}
+
+/*****************************
+***********  body  ***********
+*****************************/
+/*
+    설명 : Login에서 실제 컴포넌트들이 들어갈 box
+*/
+.login-body {
+    position: absolute;
+    width: 355px;
+    height: 205px;
+    background: rgba(255, 255, 255, 0.85);
+    /*background: yellow;*/
+    top : 142px;
+}
+
+
+/*
+    설명 : Login에서 아이디 컴포넌트 길이 set 및 가운데 정렬
+*/
+.login-id {
+    width : 268px;
+    margin: auto;     /* 추가 */
+    
+}
+
+/*
+    설명 : Login에서 비밀번호 컴포넌트 길이 set 및 가운데 정렬
+*/
+.login-password {
+    
+    width : 268px;
+    margin: auto;     /* 추가 */
+    margin-top: 6px;
+}
+
+/*
+    설명 : Login에서  컴포넌트 길이 set 및 가운데 정렬
+*/
+.login-btn {
+    width : 292px;
+    margin: auto;     /* 추가 */
+    margin-top: 17px;
+}
+
+/*
+    설명 : Login에서 로그인 버튼 아래 bar
+*/
+.login-bar {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    width: 292px;
+    margin-top: 16px;
+
+    /*border: 1px;
+    height: 1px;
+    width: 285px;
+    margin: auto;     
+    margin-top: 16px;*/
+}
+
+/*
+    설명 : Login에서 회원가입, 비밀번호 찾기 div 영역
+*/
+.login-find-info {
+    line-height: 10px;
+    padding-top: 13px;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    
+}
+
+.login-find-info a{
+    font-size: 12px;
+    line-height: 13px;
+    display: inline-block;
+    /*text-decoration: none;*/
+    color: #8e8e8e;
+}
+
+.login-find-info .bar {
+    margin: 0 13px;
+}
+
+.bar {
+    
+    display: inline-block;
+    width: 1px;
+    height: 13px;
+    text-indent: -999em;
+    background: #ccc;
+    
+
+}
+
+
+/*****************************
+*********** footer ***********
+*****************************/
+/*
+    설명 : Login에서 실제 컴포넌트들이 들어갈 box
+*/
+.login-footer {
+    position: absolute;
+    width: 355px;
+    height: 103px;
+    background: rgba(255, 255, 255, 0.85);
+    /*background: rgb(128, 10, 83);*/
+    top : 362px;
+}
+
+/*
+    설명 : 앱을 다운로드하세요. 문구 css
+*/
+.login-p-down {
+    color: #262626;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 15px 20px;
+    text-align: center;
+}
+
+/*
+    설명 : app다운로드 이미지 div 영역 css
+*/
+.login-app {
+    line-height: 10px;
+    padding-top: 3px;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: auto;
+}
+
+/*
+    설명 : app다운로드 이미지 div 영역 css
+*/
+.login-app-a {
+    margin-right: 8px;
+}
+
+.login-app-img {
+    height: 40px;
+}

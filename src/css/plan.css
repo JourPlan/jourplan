@@ -1,0 +1,1040 @@
+@CHARSET "UTF-8";
+@IMPORT url("./base.css");
+@IMPORT url("./setting.css");
+
+/********************************/
+/* 플랜 base start */
+/********************************/
+/*
+    설명 : 플랜 기본 div
+*/
+.plan-base {
+    /* background-color: red;  */
+
+    /* min-height: 216px; */
+    /* overflow:hidden;
+    height:auto; */
+    
+    
+    /*overflow: auto;*/
+    z-index: 80;
+    width: 1079px;
+    margin:auto;
+    
+    
+	/*border-bottom: #ccc solid 1px;*/
+	position: relative;
+}
+
+.plan-bar {
+    border: 0;
+    height: 1px;
+    background: #EFEFEF;
+    width: inherit;
+    margin-top: 17px;
+}
+/****** 플랜 base 제목 start ******/
+
+.plan-base-title {
+    /*background-color: green;*/
+
+    position: relative;
+    width: inherit;
+    min-height: 80px;
+    border-bottom: #EFEFEF solid 1px;
+    line-height: 80px;    
+    
+}
+
+.plan-base-title ul {
+    font-weight: 500 !important;
+    box-sizing: border-box;
+    display: block;
+    margin-left: 25px;
+    /*font-size: 44px;*/
+    font-size: 35px;
+    font-weight: normal;
+}
+
+
+
+
+/****** 플랜 base 날짜 start ******/
+
+.plan-base-day {
+    /* background-color: navy; */
+
+    position: relative;
+    width: inherit;
+    min-height: 43px;
+    border-bottom: #EFEFEF solid 1px;
+    line-height: 43px;
+}
+
+
+
+.plan-base-day ul {
+    font-weight: 500 !important;
+    box-sizing: border-box;
+    display: block;
+    padding-left: 25px;
+    /*font-size: 44px;*/
+    font-size: 15px;
+    font-weight: normal;
+}
+
+
+
+
+
+/****** 플랜 base 내용 start ******/
+.plan-base-content {
+     /* background-color: purple;  */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: inherit;
+    border-bottom: #EFEFEF solid 1px;
+    position: relative;
+}
+
+
+.plan-base-content ul {
+    /* font-weight: 800 !important; */
+    line-height: 25px;
+    box-sizing: border-box;
+    display:  block;
+    padding-left: 25px;
+    /*font-size: 44px;*/
+    font-size: 13px;
+    font-weight: normal;
+}
+
+
+/********************************/
+/* 플랜 map start */
+/********************************/
+/*
+    설명 : 플랜 map div
+*/
+.plan-map {
+    z-index: 90;
+    min-height: 600px;
+    width: inherit;
+    margin: auto;
+	/*border-bottom: #ccc solid 1px;*/
+	/* background-color: orange; */
+    position: relative;
+    
+}
+.plan-map-h1-title {
+    font-weight: 800 !important;
+    box-sizing: border-box;
+    display: block;
+    padding-top: 10px;
+    padding-left: 20px;
+    /* padding-bottom: 30px; */
+    /*font-size: 44px;*/
+    font-size: 24px;
+    font-weight: normal;
+}
+.plan-map-header {
+    /* background: rebeccapurple; */
+    z-index: 91;
+    float: left;
+    width: inherit;
+    height: 60px;
+    position: relative;
+    
+}
+.plan-map-header-search {
+    /* background: green; */
+	position: absolute;
+    
+    height:inherit;
+    width: 601px;
+    left: 0px;
+
+    margin: auto;
+
+}
+
+.plan-map-header-button {
+    /* background: blue; */
+
+	position: absolute;
+    
+    height:inherit;
+    min-width: 50px;
+    right: 0px;
+
+    margin: auto;
+    margin-right: 10px;
+    
+}
+
+.plan-map-header-btn-div {
+    
+	float: left;
+	padding-left: 5px;
+	width: 54px;
+}
+
+.plan-map-header-btn-location {
+    
+	padding-top: 15px;
+	padding-left: 9px;
+	width: 30px;
+    height: 30px;
+}
+
+.plan-map-header-btn-add {
+    
+	padding-top: 17px;
+	padding-left: 9px;
+	width: 25px;
+	height: 25px;
+}
+
+
+
+
+.plan-map-search {
+    
+	/* background-color: #F2F2F2; */
+	width : 400px;
+    height: 20px;
+    font-size: 14px;
+    /*box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, .5);*/
+    margin: auto;     /* 추가 */
+    margin-top: 13px;
+    margin-left: 25px;
+    /* border: solid 1px #dbdbdb; */
+}
+
+
+.plan-map-div {
+
+    /* background: red;  */
+    -webkit-box-align: center;
+    align-items: center;
+    width: inherit;
+    color: #999;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    font-size: 12px;
+    font-weight: 600;
+    -webkit-box-pack: center;
+    justify-content: left;
+    letter-spacing: 1px;
+    text-align: center;
+    
+    border-top: #EFEFEF solid 1px;
+}
+.plan-map-a {
+    -webkit-box-align: center;
+    align-items: center;
+    color: #999;
+
+    cursor: pointer;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    height: 52px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    /* padding-left: 20px; */
+    margin-left: 15px;
+    padding-left: 8px;
+    padding-right: 8px;
+    
+}
+
+/* .plan-map-a:not(:last-child) {
+    /* padding-right: 20px; 
+    /* margin-right: 20px; 
+    padding-right: 5px;
+} */
+
+a.plan-map-a {
+    color: #CECECE;
+}
+
+a.plan-map-a:visited {
+    color: #CECECE;
+}
+
+a.plan-map-a:hover:not(.plan-map-chk) {
+    color: #999;
+    align-items: center;
+    -webkit-box-align: center;
+    /* background-color: #FAFAFA; */
+    border-top: 2px solid #DBDBDB;
+    margin-top: -1px;
+}
+
+a.plan-map-chk {
+
+    color: #262626;
+    align-items: center;
+    -webkit-box-align: center;
+    border-top: 2px solid #262626;
+    margin-top: -1px;
+}
+
+a.plan-map-chk span {
+    color: #262626;
+}
+
+.plan-map-span {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    vertical-align: baseline;
+}
+
+
+
+.plan-map-real {
+    background: url("../images/map.png") no-repeat;
+
+    /* clear: both; */
+    position: relative;
+    width: inherit;
+    min-height: 528px;
+
+}
+
+.plan-map-list {
+    background-color: rgba(255, 255, 255, .85);
+
+    position: absolute;
+    width: 410px;
+    height: 528px;
+    right: 0px;
+    top:0px;
+
+    /* overflow-y: scroll; */
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.plan-map-list-div {
+    /* background-color: green; */
+    width:400px;
+    min-height: 100px;
+    /* margin-bottom: 10px; */
+
+}
+
+.plan-map-list-div:last-child  .plan-map-textarea {
+    margin-bottom: 10px;
+}
+/* .plan-map-list-div > ul > li {
+    float: left;
+} */
+
+.plan-map-ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+.plan-map-li {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    border : 0;
+    float: left;
+}
+
+.plan-btn-location {
+    margin-top: 16px;
+	margin-left: 30px;
+	width: 26px;
+    height: 26px;
+}
+
+.plan-map-title-input {
+    width: 298px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.plan-map-middle-input1 {
+    width: 157px;
+    margin-left: 20px;
+    margin-top: 3px;
+}
+
+.plan-map-middle-input2 {
+    width: 158px;
+    margin-left: 3px;
+    margin-top: 3px;
+}
+
+.plan-map-textarea {
+    width: 343px;
+    margin-left: 20px;
+    margin-top: 3px;
+    
+    overflow: visible;
+    overflow-y: hidden;
+
+    
+}
+
+.plan-btn-location {
+
+}
+/********************************/
+/* 플랜 스케줄 start */
+/********************************/
+/*
+    설명 : 플랜 일정 div
+*/
+.plan-sche {
+    background-color: #fdfdfd;
+
+    min-height: 476px;
+    width: inherit;
+    margin: auto;
+	/*border-bottom: #ccc solid 1px;*/
+	/* background-color: yellow; */
+    position: relative;
+}
+
+/*
+    설명 : 플랜 일정 h1 TITLE
+*/
+.plan-sche-h1-title {
+    font-weight: 800 !important;
+    box-sizing: border-box;
+    display: block;
+    padding-top: 2px;
+    padding-left: 20px;
+    /* padding-bottom: 30px; */
+    /*font-size: 44px;*/
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.plan-sche-frame {
+    /* background-color: rebeccapurple; */
+
+    /* position: absolute;
+    left: 0px;
+    top:0px; */
+    /* float: left;  */
+    width: 100%;
+    min-height: 476px;
+
+    
+   /* display: inline-flex;
+   flex-direction: row; */
+    /* display: flex; */
+    white-space: nowrap;
+    overflow: auto;
+    /* overflow-x: scroll; */
+    overflow-y: hidden;
+}
+.plan-sche-div {
+    
+   /* float: left; */
+
+   display: inline-table !important; 
+   /* display: -webkit-inline-flex !important; 
+   display: -ms-inline-flexbox !important;  */
+   flex-shrink: 0;
+   /* -ms-display: inline-flex; */
+   background-color: inherit;  
+   margin-left: 20px;
+   margin-top: 20px;
+   /* padding-left: 10px; */
+   /* padding-top: 10px;
+   padding-bottom: 10px; */
+   width: 345px;
+   /* border-bottom: #EFEFEF solid 1px; */
+   
+}
+
+.plan-sche-table {
+    background-color: #ffffff;
+    width: 100%;
+    border-collapse: collapse;
+    /* border: 1px solid #101010; */
+}
+
+.plan-sche-table > thead > tr th{
+    border-bottom: #101010 solid 1px;
+    height: 40px;
+}
+
+.plan-sche-table > thead > tr th:first-child {
+    width:300px;
+    padding-left: 15px;
+    font-weight: 600 !important;
+    font-size: 16px;
+    font-weight: normal;
+    cursor: default;
+}
+
+.plan-sche-table > thead > tr th:last-child {
+    width:45px;
+    
+    /* border-right: #f4f4f4 solid 1px;
+    border-left: #f4f4f4 solid 1px; */
+    cursor: pointer;
+}
+
+.plan-sche-table > tbody tr td {
+    border-bottom: #F4F4F4 solid 1px;
+    height: 40px;
+}
+
+/*
+    설명 : 플랜 일정 테이블 내용 중 첫번째 열(시간)
+*/
+.plan-sche-table > tbody tr td:nth-child(1) {
+    padding-left: 8px;
+    width:40px;
+    border-right: #f4f4f4 solid 1px;
+    
+    cursor: default;
+}
+/*
+    설명 : 플랜 일정 테이블 내용 중 두번째 열(아이콘)
+*/
+.plan-sche-table > tbody tr  td:nth-child(2) {
+    width:30px;
+    padding-left: 5px;
+    
+    cursor: default;
+    /* border-right: #f4f4f4 solid 1px; */
+}
+/*
+    설명 : 플랜 일정 테이블 내용 중 세번째 열(제목)
+*/
+.plan-sche-table > tbody tr td:nth-child(3) {
+    width: 207px;
+    
+    cursor: default;
+}
+/*
+    설명 : 플랜 일정 테이블 내용 중 첫번째 열(접기,펴기버튼)
+*/
+.plan-sche-table > tbody tr td:nth-child(4) {
+    width:45px;
+    /* border-right: #f4f4f4 solid 1px;
+    border-left: #f4f4f4 solid 1px; */
+    cursor: pointer;
+}
+
+
+.plan-table-btn-location {
+    margin-top: 5px;
+	/* margin-left: 1px; */
+	width: 24px;
+    height: 24px;
+}
+
+.plan-table-btn-schedule {
+    margin-top: 5px;
+	margin-left: 1px;
+	width: 22x;
+    height: 22px;
+}
+.plan-table-btn-settingGray {
+    padding-top: 3px;
+    padding-left: 13px;
+    width: 20px;
+    height:20px;
+}
+
+.plan-sche-table-content-unhide {
+    /* box-shadow: 0px 3px 7px  #333333 inset; */
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    border-top: #E8E8E8 solid 2px;
+    border-bottom: #F4F4F4 solid 1px;
+    border-right: #F4F4F4 solid 0px !important;
+}
+.plan-sche-table-money-unhide {
+    text-align: right;
+    padding-right: 10px;
+    border-bottom: #E8E8E8 solid 1px !important;
+    border-right: #F4F4F4 solid 0px !important;
+}
+
+.plan-sche-table-content-hide {
+    display: none;
+}
+
+
+.plan-table-sche-tr td{
+    background-color: #F1F1F1;
+}
+
+
+/*****************/
+/* 플랜 테이블 bottom쪽 start */
+/****************/
+
+
+.plan-sche-table-bottom{
+    
+    background-color: #ffffff;
+    /* background-color: #3D9970; */
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* border: 1px solid #101010; */
+}
+
+.plan-sche-table-bottom > thead > tr th{
+    
+    background-color: #fdfdfd;
+    border-bottom: #101010 solid 1px;
+    height: 40px;
+
+    width:345px;
+
+    text-align: center;
+    cursor: default;
+}
+
+.plan-sche-table-bottom > tbody tr td {
+    border-bottom: #F4F4F4 solid 1px;
+    height: 40px;
+}
+
+.plan-sche-table-bottom > tbody tr td:nth-child(1) {
+    padding-left: 8px;
+    width:280px;
+    border-right: #f4f4f4 solid 1px;
+    
+    cursor: default;
+}
+
+.plan-sche-table-bottom > tbody tr td:nth-child(2) {
+    padding-left: 8px;
+    width:65px;
+    /* border-right: #f4f4f4 solid 1px; */
+    text-align: right;
+    padding-right: 10px;
+    cursor: default;
+}
+
+.plan-table-btn-add {
+    margin: 0 auto;
+    cursor: pointer;
+	/* margin-left: 1px; */
+	width: 24px;
+    height: 24px;
+}
+/********************************/
+/* 플랜 버튼 start */
+/********************************/
+/*
+    설명 : 플랜 버튼 div
+*/
+.plan-btn {
+
+    background-color: #fdfdfd;
+    position: relative;
+    height: 110px;
+    width: 1079px;
+    margin: auto;
+    padding-top: 30px;
+	/*border-bottom: #ccc solid 1px;*/
+	/* background-color: green; */
+}
+
+
+.plan-common-btn {
+    width : 233px;
+    height: 35px;
+    margin: auto;     /* 추가 */
+    /* margin-top: 30px; */
+    /* margin-top: 30px; */
+    
+    font-size: 15px;
+    /* font-weight: 400; */
+}
+
+
+
+/*******************************************/
+/*********** 나의 플랜 list start ***********/
+/*******************************************/
+/*총 width = 1079px*/
+.plan-list-left {
+    background-color: #fafafa;
+
+    position: relative;
+    float: left;
+    width: 210px;
+    min-height: inherit;
+}
+
+.plan-list-left-div {
+
+    background-color: #fafafa;
+    position: relative;
+    
+    width: 210px;
+    min-height: inherit;
+    z-index: 10;
+}
+
+.plan-profile {
+    background-color: #ffffff;
+    position: relative;
+    width: 210px;
+    height: 210px;
+    margin-top: 15px;
+    /* box-shadow: 1px 1px rgba(22, 23, 31, 0.1) !important; */
+    /* border: 1px solid #ccc; */
+    z-index:11;
+}
+
+.plan-profile-img-div {
+    /* background-color: red; */
+    position: absolute;
+
+    width: 77px;
+    height: 113px;
+}
+
+.plan-profile-info-div {
+    /* background-color: orange; */
+    position: absolute;
+    width:133px;
+    height: 113px;
+    left: 77px;
+}
+
+.plan-profile-introduce-div {
+    /* background-color: yellow; */
+    position: absolute;
+    width: 210px;
+    height: 97px;
+    top:113px;
+
+}
+
+.plan-profile-h1-id {
+    padding-left: 20px;
+    line-height: 40px;
+    font-weight: 600 !important;
+    box-sizing: border-box;
+    display: block;
+
+    font-size: 16px;
+}
+
+.plan-profile-h1-plan {
+    padding-left: 20px;
+    line-height: 23px;
+    font-size: 13px;
+}
+
+.plan-profile-h1-friend {
+    padding-left: 20px;
+    line-height: 23px;
+    font-size: 13px;
+}
+
+.plan-profile-h1-introduce {
+    padding-left: 15px;
+    padding-right: 15px;
+    line-height: 20px;
+    
+
+}
+
+.plan-profile-bar {
+    position: absolute;
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    width: 180px;
+    top: 95px;
+    left: 15px;
+    /* margin-top: 16px; */
+
+    /*border: 1px;
+    height: 1px;
+    width: 285px;
+    margin: auto;     
+    margin-top: 16px;*/
+}
+
+.plan-profile-circle {
+    position: absolute;
+    display: block; 
+    overflow: hidden;
+
+    width:65px;
+    height:65px;
+    
+    border-radius:100px;
+    -moz-border-radius : 100px;
+    -webkit-border-radius : 100px;
+    -ms-border-radius :100px;
+    -khtml-border-radius : 100px;
+    -o-border-radius :100px;
+    background:#3D9970;
+    color:#fff;
+    text-align:center;
+    /*border: 0px solid rgba(0, 0, 0, 0);*/
+
+    top: 18px;
+    left: 16px;
+}
+
+.plan-profile-circle-img {
+    display: block;
+    padding-top: 10px;
+    padding-left: 5px;
+    
+    width: 57px;
+	height: 57px;
+}
+
+
+
+.plan-list-right {
+    /* background-color: rgba(0, 0, 0, .0); */
+    background-color: #fafafa;
+    position: relative;
+    float: left;
+    width: 869px;
+    min-height: inherit;
+
+}
+
+.plan-list-right-div {
+    background-color: #ffffff;
+    position: relative;
+    width: 862px;
+    margin:auto;
+    margin-right: 0px;
+    min-height: inherit;
+    /* border: 1px solid #ccc; */
+
+}
+/*
+    설명 : 플랜 list
+*/
+.plan-list {
+    background-color: #ffffff;
+
+    position: relative;
+    min-height: 185px;
+    width: 862px;
+    margin: auto;
+    margin-right: 0px;
+    border-top: #EFEFEF solid 1px;
+    /*border-top: #131EFF solid 1px;*/
+	/*background-color: green;*/
+    
+}
+
+
+/*
+    설명 : 플랜 list 첫번째 list는 구분선 빼기.
+*/
+.plan-list:first-child {
+    border-top: #EFEFEF solid 0px;
+
+}
+
+
+/*
+    설명 : 플랜 list 아이디 영역
+*/
+.plan-list-id {
+    /*background-color: red;*/
+
+    position: relative;
+    height: 55px;
+    width: inherit;
+
+}
+
+/*
+    설명 : 플랜 list 제목 영역
+*/
+.plan-list-title {
+    /*background-color: orange;*/
+
+    position: relative;
+    height: 55px;
+    width: inherit;
+}
+
+
+/*
+    설명 : 플랜 list 날짜기간 영역
+*/
+.plan-list-day {
+    /*background-color: yellow;*/
+
+    position: relative;
+    height: 25px;
+    width: inherit;
+    
+}
+
+/*
+    설명 : 플랜 list 내용 영역
+*/
+.plan-list-content {
+    /*background-color: green;*/
+
+    position: relative;
+    min-height: 70px;
+    width: inherit;
+    
+}
+
+
+/********************************/
+/* 아이디영역 start */
+/********************************/
+/*
+    설명 : 플랜 list 아이디 영역
+*/
+.plan-circle {
+    position: absolute;
+    display: block; 
+    overflow: hidden;
+    width:42px;
+    height:42px;
+    border-radius:100px;
+    -moz-border-radius : 100px;
+    -webkit-border-radius : 100px;
+    -ms-border-radius :100px;
+    -khtml-border-radius : 100px;
+    -o-border-radius :100px;
+    background:#3D9970;
+    color:#fff;
+    text-align:center;
+    /*border: 0px solid rgba(0, 0, 0, 0);*/
+
+    top: 11px;
+    left: 55px;
+}
+
+.plan-circle-img {
+    display: block;
+    padding-top: 10px;
+    padding-left: 5px;
+	width: 33px;
+	height: 33px;
+}
+
+.plan-id-div {
+    position: absolute;
+    /*background: #131EFF;*/
+    min-width: 69px;
+    height: 24px;
+
+    left: 110px;
+    top: 21px;
+}
+
+.plan-list-menu {
+    /*background: #131EFF;*/
+    
+    position: absolute;
+    
+    min-width: 15px;
+    height: 15px;
+
+    right: 55px;
+    top: 25px;
+
+}
+.plan-list-menu-img {
+    
+    display: block;
+    
+    
+	width: 15px;
+	height: 15px;
+}
+
+/********************************/
+/* 제목 영역 start */
+/********************************/
+.plan-title-div {
+    position: absolute;
+    /*background: #131EFF;*/
+
+    min-width: 300px;
+    height: inherit;
+    left: 55px;
+    top: 0px;
+}
+
+.plan-title-div h1 {
+    
+    font-weight: 800 !important;
+    box-sizing: border-box;
+    display: block;
+
+    /*font-size: 44px;*/
+    font-size: 35px;
+    font-weight: normal;
+}
+
+
+/********************************/
+/* 기간날짜 영역 start */
+/********************************/
+.plan-day-div {
+    position: absolute;
+    /*background: #131EFF;*/
+
+    min-width: 170px;
+    height: inherit;
+    left: 55px;
+    margin:auto;
+}
+.plan-day-div h1 {
+    color: #767676;
+}
+
+/********************************/
+/* 내용 영역 start */
+/********************************/
+.plan-content-div {
+    position: absolute;
+    /*background: #131EFF;*/
+    
+    width: inherit;
+    min-height: inherit;
+    left: 55px;
+    top: 5px;
+    margin:auto;
+}
+
+.plan-content-div h1 {
+    
+    /*font-weight: 800 !important;*/
+    box-sizing: border-box;
+    display: block;
+
+    /*font-size: 44px;*/
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.plan-map-input {
+
+}

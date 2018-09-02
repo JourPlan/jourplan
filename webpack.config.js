@@ -2,9 +2,8 @@ var path = require('path');
 
 module.exports = {
 	entry: {
-		'plan/Hello' : __dirname + '/src/js/plan/Hello.js',
-		'member/Login' : __dirname + '/src/js/member/Login.jsx',
-		'main/App2' : __dirname + '/src/js/main/App2.js',
+		 'member/member' : __dirname + '/src/js/member/member.jsx'
+		,'main/main' : __dirname + '/src/js/main/main.jsx'
 	},  
 	output: {
 		path: path.resolve(__dirname, 'public/js'),
@@ -13,29 +12,21 @@ module.exports = {
 	},
 	module: {
 		loaders: [{
-			// test: /\.jsx?$/,
-			// loader: 'babel',
-			// query:{
-			// 	cacheDirectory: true,
-			// 	presets: ['react','es2015']
-			// }
-
-			
 			test: /\.(js|jsx)?$/,
 			loader: 'babel',
-			exclude: /node_modules/,
 			query:{
 				cacheDirectory: true,
-				presets: ['react','es2015'],
-				plugins: ['react-hot-loader/babel']
+				presets: ['react','es2015']
 			}
-
-			// test: /\.(js|jsx)?$/,
-            // loaders: ['react-hot-loader', 'babel-loader?' + JSON.stringify({
-            //     cacheDirectory: true,
-            //     presets: ['es2015', 'react']
-            // })],
-			// exclude: /node_modules/
-		}]
+		},
+		{
+			test: /\.css$/,
+			loaders: ['style', 'css']
+		},
+		{
+			test: /\.(ico|png|jpg|jpeg|gif|svg|otf|woff|woff2|ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+			loaders: ['url']
+		}
+		]
 	}
 };

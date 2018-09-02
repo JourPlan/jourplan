@@ -1,0 +1,336 @@
+@CHARSET "UTF-8";
+@IMPORT url("./base.css");
+
+
+.setting-div {
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: inherit;
+    /* margin-top: 50px; */
+}
+
+.setting-menu {
+    /* background: blue; */
+    /* margin-top:40px; */
+    position: relative;
+    float: left;
+    width: 236px;
+    min-height: inherit;
+}
+
+.setting-menu-ul {
+    -webkit-box-flex: 0;
+    -webkit-flex-grow: 0;
+    -ms-flex-positive: 0;
+    flex-grow: 0;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+}
+
+.setting-menu-a {
+    color: #262626;
+    text-decoration: none;
+    border-left: 2px solid transparent;
+    display: block;
+    font-size: 16px;
+    min-height: inherit;
+    line-height: 20px;
+    padding: 16px 16px 16px 30px;
+    width: inherit;
+    cursor: pointer;
+}
+.setting-menu-a:hover:not(.setting-menu-chk) {
+    background-color: rgb(250, 250, 250);
+    border-left: 2px solid #ccc;
+}
+.setting-menu-chk {
+    border-left: 2px solid #262626;
+    font-weight: 500;
+    /* text-decoration: underline; */
+}
+
+.setting-content {
+    /* background: green; */
+    
+    position: relative;
+    float: left;
+    /* margin-top:40px; */
+    width: calc(100% - 238px);
+    /* width: calc(100% - 250px); */
+    min-height: inherit;
+    border-left: #ccc solid 1px;
+    /* opacity: 0.5; */
+}
+
+
+
+.setting-content-h1-title {
+    /* background: yellow; */
+    font-weight: 800 !important;
+    box-sizing: border-box;
+    display: block;
+    padding-top: 15px;
+    padding-left: 30px;
+    /* padding-bottom: 30px; */
+    /*font-size: 44px;*/
+    font-size: 24px;
+    font-weight: normal;
+    
+}
+
+.setting-content-bar {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    width: calc(100% - 60px);
+    margin:0 auto;
+    margin-top: 15px; 
+    margin-left: 30px;
+    margin-bottom: 15px;
+    /* padding-right: -90px; */
+}
+
+.setting-content-h1 {
+
+    font-weight: 400 !important;
+    box-sizing: border-box;
+    display: block;
+    padding-top: 15px;
+    padding-left: 30px;
+    /* padding-bottom: 30px; */
+    /*font-size: 44px;*/
+    font-size: 15px;
+    font-weight: normal;
+}
+.setting-h1-last {
+    padding-bottom: 30px;
+}
+
+.setting-content-div {
+    /* background: gray; */
+
+    position: relative;
+    width: 100%;
+    /* border-bottom: 1px solid #ccc; */
+    /* height: 50px; */
+    /* line-height: 50px; */
+    /* position: relative; */
+    /* -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+
+    margin-bottom: 16px;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start; */
+    
+
+}
+
+.setting-profile-img {
+    /* background: gray; */
+    height: 230px;
+    margin-bottom: 20px;
+    /* padding-bottom: 30px; */
+}
+
+
+.setting-content-circle {
+    position: absolute;
+    display: block; 
+    overflow: hidden;
+    width:200px;
+    height:200px;
+    border-radius:100px;
+    -moz-border-radius : 100px;
+    -webkit-border-radius : 100px;
+    -ms-border-radius :100px;
+    -khtml-border-radius : 100px;
+    -o-border-radius :100px;
+    background:#3D9970;
+    color:#fff;
+    text-align:center;
+    /*border: 0px solid rgba(0, 0, 0, 0);*/
+
+	top: 0;               
+    bottom: 0;            
+    left: 0;              
+    right: 0;
+    margin: auto;
+}
+
+.setting-content-circle-img {
+    display: block;
+    padding-top: 37px;
+    padding-left: 18px;
+	width: 165px;
+	height: 165px;
+}
+
+.setting-content-left {
+    /* background:red; */
+
+    /* position: relative; */
+    float: left;
+    width: 165px;
+    line-height: 50px;
+    text-align: right;
+    padding-right: 30px;
+    /* padding-left: 32px;
+    margin-top: 6px;
+    -webkit-flex: 0 0 194px;
+    -ms-flex: 0 0 194px;
+    flex: 0 0 194px;    
+    
+    box-sizing: border-box;
+    color: #262626;
+    -webkit-box-flex: 0;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 18px; */
+}
+
+.setting-content-right {
+    /* background: green; */
+
+    position: relative;
+    float: left;
+    width: calc(100% - 195px);
+    height: 50px;
+}
+
+.setting-content-center {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 50px;
+
+}
+.setting-textarea {
+    height: 117px; !important;
+}
+
+
+.setting-content-input {
+    
+    position: absolute;
+    width: 450px;
+    
+	top: 0;               
+    bottom: 0;            
+    left: 0;              
+    right: 0;
+    margin: auto;
+    margin-left: 0px;
+}
+
+
+.setting-content-textarea {
+    
+    position: absolute;
+    width: 450px;
+    height: 90px;
+	top: 0;               
+    bottom: 0;            
+    left: 0;              
+    right: 0;
+    margin: auto;
+    margin-left: 0px;
+}
+
+.setting-btn {
+    width : 233px;
+    height: 35px;
+    margin: auto;     /* 추가 */
+    margin-top: 30px;
+    /* margin-top: 30px; */
+    
+    font-size: 15px;
+    /* font-weight: 400; */
+}
+
+
+.setting-friend-list-id {
+    /*background-color: red;*/
+
+    position: relative;
+    height: 55px;
+    width: inherit;
+    margin-bottom: 15px;
+
+}
+
+
+.setting-friend-circle {
+    position: absolute;
+    display: block; 
+    overflow: hidden;
+    width:42px;
+    height:42px;
+    border-radius:100px;
+    -moz-border-radius : 100px;
+    -webkit-border-radius : 100px;
+    -ms-border-radius :100px;
+    -khtml-border-radius : 100px;
+    -o-border-radius :100px;
+    background:#3D9970;
+    color:#fff;
+    text-align:center;
+    /*border: 0px solid rgba(0, 0, 0, 0);*/
+
+    top: 11px;
+    left: 55px;
+}
+
+.setting-friend-circle-img {
+    display: block;
+    padding-top: 10px;
+    padding-left: 5px;
+	width: 33px;
+	height: 33px;
+}
+
+
+.setting-friend-id-div {
+    position: absolute;
+    /*background: #131EFF;*/
+    min-width: 69px;
+    height: 24px;
+
+    left: 110px;
+    top: 21px;
+}
+
+
+.setting-friend-list-menu {
+    /* background: #131EFF; */
+    
+    position: absolute;
+    
+    min-width: 15px;
+    /* height: 15px; */
+
+    right: 55px;
+    top: 25px;
+
+}
+.setting-friend-list-menu-img {
+    
+    display: block;
+    
+    
+	width: 15px;
+	height: 15px;
+}
+
+.friend-req-btn {
+    float: left;
+    width: 80px;
+    margin-left: 10px;
+
+}

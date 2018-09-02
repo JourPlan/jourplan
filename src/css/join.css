@@ -1,0 +1,115 @@
+@CHARSET "UTF-8";
+@IMPORT url("./login.css");
+
+/*
+    설명 : Login에서 가운데 영역box
+*/
+.join-center-box {
+    position: absolute;   
+    width: 355px;
+    height: 640px;
+	top: 0;               
+    bottom: 0;            
+    left: 0;              
+    right: 0;             
+    margin: auto;     /* 추가 */
+}
+
+/*
+    설명 : Login에서 실제 컴포넌트들이 들어갈 box
+*/
+.join-center-back {
+	position: relative;
+	width: 355px;
+    height: 465px;
+    /*background: rgba(255, 255, 255, 0.83);*/
+    /*opacity: 0.5;*/
+    
+}
+
+/*****************************
+********* join body  *********
+*****************************/
+/*
+    설명 : join에서 실제 컴포넌트들이 들어갈 box
+*/
+.join-body {
+    position: absolute;
+    width: 355px;
+    height: 305px;
+    background: rgba(255, 255, 255, 0.85);
+    /*background: yellow;*/
+    top : 142px;
+}
+
+.join-label {
+    position: relative;
+    cursor: pointer;
+    vertical-align:-1px
+
+    /*min-height: 20px;
+    padding-left: 20px;
+    font-weight: 400;
+    
+
+    display: inline-block;
+    max-width: 100%;
+
+    margin-bottom: 5px;*/
+}
+
+label {
+    vertical-align:-1px
+} 
+.input_chk {
+    width:13px;
+    height:13px;
+    vertical-align:text-top
+}
+
+/*****************************
+********* join bottom ********
+*****************************/
+/*
+    설명 : Login에서 실제 컴포넌트들이 들어갈 box
+*/
+.join-bottom {
+    position: absolute;
+    width: 355px;
+    height: 61px;
+    background: rgba(255, 255, 255, 0.85);
+    /*background: rgb(128, 10, 83);*/
+    top : 462px;
+    /*margin: 0 0 7px;
+    padding: 7px 0;*/
+}
+
+.join-p {
+    color: #262626;
+    font-size: 14px;
+    line-height: 30px;
+    margin: 15px 20px;
+    text-align: center;
+    
+    
+    
+}
+
+.join-p>a, .join-p>a:active, .join-p>a:hover, .join-p>a:visited {
+    color: #3897f0;
+}
+
+/*****************************
+*********** footer ***********
+*****************************/
+/*
+    설명 : join에서 실제 컴포넌트들이 들어갈 box
+*/
+.join-footer {
+    position: absolute;
+    width: 355px;
+    height: 103px;
+    background: rgba(255, 255, 255, 0.85);
+    /*background: rgb(128, 10, 83);*/
+    top : 537px;
+}

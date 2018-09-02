@@ -37,7 +37,7 @@ app.use(_bodyParser2.default.json());
 
 // app.get('/man', (req, res) =>{
 
-console.log('man in 111');
+console.log('man in 211');
 // 	connection.query("SELECT * FROM mem_info_mng where MEM_INFO_ID = '99999999'", (err, rows) => {
 // 		if(err) throw err;
 

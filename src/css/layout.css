@@ -1,0 +1,239 @@
+@CHARSET "UTF-8";
+@IMPORT url("./base.css");/*.은 현재폴더 ..은 이전폴더*/
+
+/* #은 아이디이고 .은 class이다. 
+백그라운드 컬러 는 base에다가 넣는다.
+
+layout는 틀이나 위치를 적고
+base에다가 디자인적인걸 넣는다.*/
+
+/*프레임 시작*/
+#header{
+	background-color: #fafafa;
+	height:44px;
+	/* !important;
+	box-shadow: 0px 2px 2px  rgba(0, 0, 0, 1); */
+}
+#bnn-image{
+	height:50px;
+	background-color: #f4f4f4;
+	box-shadow: inset 0px 2.5px 1.8px  rgba(0, 0, 0, .06);
+	
+}
+#nav{
+	height:50px;
+	/* background: url("/BNN/image/BNN.png") no-repeat; */
+	background-color :rgba(0, 0, 0, 0);
+	width:1050px;
+	margin:auto;
+	position: relative;
+	
+}
+#nav-div{
+	background: url("/BNN/image/BNN.png") no-repeat;
+	height:44px;
+	top:6px;
+	width:inherit;
+	position: absolute;
+}
+#content{
+	min-height:717px;
+	background-color: #f4f4f4;
+	
+	
+}
+#footer{
+	height: 100px;
+	background-color: #DBDBDB;
+	box-shadow: inset 0px 2.5px 1.8px  rgba(0, 0, 0, .06);
+}
+
+.header-div{
+	/* background-color:#F4F4F4; */
+	width:1000px;
+	margin: auto;
+	height:inherit;
+	position: relative;
+}
+#mainMenu{
+	/* top:5px; */
+	left:0px;
+	position: absolute;
+	height: inherit;
+	
+}
+#article{
+	background-color: rgba(255, 255, 255, .8);
+	width:1000px;
+	margin: auto;
+	min-height: 700px;
+	box-shadow: -2px 2px 4px  rgba(0, 0, 0, .04); /* 그림자효과 */
+	border-radius:8px; /* 둥근사각형*/ 												
+	position: relative;
+	top:-30px;
+}
+
+
+
+/******** article layout 시작 ********/
+
+/* BNN 불투명 부분 START */
+#article-first{
+	background:url("/BNN/image/main.png") no-repeat;
+	width:1000px;
+	height:293px;
+	/* position: absolute; */
+}
+/* BNN 불투명 부분 END */
+
+
+/* 메인 HEADER START */
+.article-notice{
+	height: 35px;
+	width: 970px;
+	margin:auto;
+	border-bottom: #ccc solid 1px;
+	position: relative;
+	
+}
+.article-nornotice{
+	left:8px;
+	top:10px;
+	position: absolute;
+}
+.article-anotice{
+	left:59px;
+	top:14.5px;
+	position: absolute;
+}
+.article-sub{
+	height: 35px;
+	width: 970px;
+	margin:auto;
+	border-bottom: #ccc solid 1px;
+	position: relative;
+}
+.article-norsub{
+	left:18px;
+	top:8px;
+	position: absolute;
+}
+.article-asub{
+	right:24px;
+	top:13px;
+	position: absolute;
+}
+
+/* 메인 HEADER END */
+
+
+
+/* 메인 BODY START */
+.article-main{
+	position: relative;
+	width:970px;
+	margin: auto;
+	min-height: 250px;
+	/* background-color: #333333; */
+}
+#article-main-top{
+	margin:auto;
+	width:inherit;
+	height:40px;
+	border-bottom: #ccc solid 1px;
+	position:relative;
+}
+#article-main-title1{
+	bottom: 8px;
+	position: absolute;
+}
+#article-main-title2{
+	top:3px;
+	right:5px;
+	position: absolute;
+	
+}
+
+
+#article-main-center{
+	min-height: 204px;
+	margin:auto;
+	width:inherit;
+	/* top:55px; */
+	/* left:15px; */
+	padding-top:15px;
+	/* padding-left: 15px; */
+	/* background-color : #444444; */
+	/*position:absolute; */
+	border-bottom: #ccc solid 1px;
+	
+}
+#article-main-bottom{
+	padding-top:10px;
+	height:43px;
+	position: relative;
+	width:970px;
+	margin: auto;
+}
+#article-main-comment{
+	position: absolute;
+	
+}
+#article-main-edit{
+	right:10px;
+	position: absolute;
+}
+/* 메인 BODY END */ 
+
+
+/* 메인 FOOTER START */
+#article-footer{
+	position: relative;
+	width:970px;
+	margin: auto;
+	height:37px;
+	
+}
+#article-footer-top{
+	position: absolute;
+	right: 0px;
+}
+#article-footer-number{
+	text-align:center;
+	width:inherit;
+}
+#article-footer-number > dl{
+	display: inline-block;
+}
+
+#article-footer-number dt{
+	padding-left: 5px;
+}
+#article-footer-number dd{
+	padding-left: 5px;
+}
+#article-footer-number dd:last-child{
+	display: none;
+}
+
+/* 메인 FOOTER END */
+
+/*********** 정렬 ***********/
+.alignL{
+	text-align:left;
+}
+
+.alignR{
+	text-align:right;
+}
+.alignC{
+	text-align:center;
+}
+
+
+
+
+
+
+
+
