@@ -4,5 +4,8 @@ node_modules/
 # build 된 파일 제외
 build/
 
+# public 파일 제외
+public/js
+
 # npm-debug.log
 # db-config.json

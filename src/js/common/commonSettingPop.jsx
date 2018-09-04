@@ -12,33 +12,48 @@ export default class CommonSettingPop extends React.Component {
         super(props);
 
         this.state = {
-            shouldHide: 'N'
+            shouldHide: 'Y'
         };
         this.setShouldHide = this.setShouldHide.bind(this);
     }
     
     /*************************
-    * 사용자 정의 함수
+    * React life cycle 정의 함수
     *************************/
 
-//    componentWillMount(){
-//     this.setShouldHide(this.props.onSettingPop());
+    //컴포넌트가 마운트 되기 직전
+    componentWillMount(){
 
-//    }
+    }
+    
+    //컴포넌트가 마운트 된 직후
+    componentDidMount(){
+        
+    }
+
+    //컴포넌트의 프로퍼티가 변경될 때
+    componentWillReceiveProps(nextProps){
+        console.log("change == " + nextProps.sHide)
+        this.setShouldHide(nextProps.sHide)
+    }
+
+    /*************************
+    * 사용자 정의 함수
+    *************************/
     
     //프로필 편집
     clickSettingProfile(e) {
-        location.href='../member/settingProfile.html';
+        location.href='/settingProfile';
     }
 
     //친구 관리
     clickSettingFriend(e) {
-        location.href='../member/settingFriend.html';
+        location.href='/settingFriend';
     }
 
     //친구요청 관리
     clickSettingFriendRequest(e) {
-        location.href='../member/settingFriendReq.html';
+        location.href='/settingFriendReq';
     }
 
     //비밀번호 변경
@@ -63,19 +78,13 @@ export default class CommonSettingPop extends React.Component {
         this.setState({
             shouldHide: value
         });
+        return;
     };
 
     /*************************
     * render
     *************************/
     render() {
-        console.log("===== " + this.props.sHide)
-        if (this.props.sHide == "N") {
-            console.log("111===== " + this.props.sHide)
-            this.setShouldHide.bind("N")
-            console.log("222===== " + this.props.sHide)
-            
-        }
         return (
             <div>
                 <div className={this.state.shouldHide == "Y" ? "hidden" : "setting-pop-background"}>

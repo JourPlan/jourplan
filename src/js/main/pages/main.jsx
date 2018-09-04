@@ -119,6 +119,7 @@ class MainHeader extends React.Component {
             <header className="header-main">
                 <CommonSettingPop
                     sHide={this.state.sHide}
+                    
                 />
                 {/* <!-- <div className="header-div"> --> */}
                 <div className="header-div2">
