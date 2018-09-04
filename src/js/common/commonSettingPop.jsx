@@ -2,7 +2,6 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import jQuery from 'jquery';
 
 
 export default class CommonSettingPop extends React.Component {
@@ -13,7 +12,7 @@ export default class CommonSettingPop extends React.Component {
         super(props);
 
         this.state = {
-            shouldHide: true
+            shouldHide: 'N'
         };
         this.setShouldHide = this.setShouldHide.bind(this);
     }
@@ -22,6 +21,10 @@ export default class CommonSettingPop extends React.Component {
     * 사용자 정의 함수
     *************************/
 
+//    componentWillMount(){
+//     this.setShouldHide(this.props.onSettingPop());
+
+//    }
     
     //프로필 편집
     clickSettingProfile(e) {
@@ -52,7 +55,7 @@ export default class CommonSettingPop extends React.Component {
     clickSettingCancel(e) {
         //jQuery("#settingPopDiv").css("display", "none");
         console.log("onclickPop"); 
-        this.setShouldHide(true);
+        this.setShouldHide('Y');
     }; 
 
     setShouldHide(value) {
@@ -66,9 +69,16 @@ export default class CommonSettingPop extends React.Component {
     * render
     *************************/
     render() {
+        console.log("===== " + this.props.sHide)
+        if (this.props.sHide == "N") {
+            console.log("111===== " + this.props.sHide)
+            this.setShouldHide.bind("N")
+            console.log("222===== " + this.props.sHide)
+            
+        }
         return (
             <div>
-                <div className={this.state.shouldHide ? "hidden" : "setting-pop-background"}>
+                <div className={this.state.shouldHide == "Y" ? "hidden" : "setting-pop-background"}>
                     <div className="setting-pop-div">
                         <div className="setting-pop-center-box">
                             <div className="setting-pop-center-back">

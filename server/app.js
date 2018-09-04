@@ -16,6 +16,12 @@ app.use(bodyParser.json());
 app.use('/', express.static(__dirname + "/../public"));
 app.use('/login', express.static(__dirname + "/../public"));
 app.use('/join', express.static(__dirname + "/../public"));
+app.use('/passwordReset', express.static(__dirname + "/../public"));
+
+// app.use('/settingFriend', express.static(__dirname + "/../public"));
+// app.use('/settingFriendReq', express.static(__dirname + "/../public"));
+// app.use('/settingPassChg', express.static(__dirname + "/../public"));
+// app.use('/settingProfile', express.static(__dirname + "/../public"));
 
 //## main
 app.use('/main', express.static(__dirname + "/../public/views/main/main.html"));

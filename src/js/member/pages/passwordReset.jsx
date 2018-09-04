@@ -2,7 +2,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import jQuery from 'jquery';
+import '../../../css/passwordReset.css'
+import {Redirect, Link} from 'react-router-dom'
 
 /* 전역변수 */
 const { render } = ReactDOM;
@@ -19,6 +20,7 @@ class PasswordReset extends React.Component {
         super(props);
 
         this.state = {
+            path: '',   //이동할 경로
             login: {
                 id: '',            //로그인 아이디
                 password: '',      //로그인 패스워드
@@ -46,12 +48,14 @@ class PasswordReset extends React.Component {
 
     // 로그인 버튼 클릭
     clickLogin(e) {
-        location.href='./login.html';
+        // location.href='./login.html';
+        this.setState({path: '/login'})
     }
 
     //로그인 페이지(member메인 페이지)로 이동
     clickMemberMain(e) {
-        location.href='./login.html';
+        // location.href='./login.html';
+        this.setState({path: '/login'})
     }
     
     // 값변경 이벤트
@@ -76,6 +80,9 @@ class PasswordReset extends React.Component {
      *************************/
 
     render() {
+        if (this.state.path) {
+            return <Redirect to={this.state.path} />
+        }
         return (
             <div className="back-box-img">
                 <div className="passwordReset-center-box">
@@ -134,5 +141,6 @@ PasswordReset.defaultProps = {
 };
 
 /* ReactElements 컴파일 */
-const root = document.querySelector('div#mainDiv');
-render(<PasswordReset/>, root);
+export default PasswordReset;
+// const root = document.querySelector('div#mainDiv');
+// render(<PasswordReset/>, root);

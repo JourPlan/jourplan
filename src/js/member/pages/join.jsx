@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import '../../../css/join.css'
+import {Redirect, Link} from 'react-router-dom'
 
 /* 전역변수 */
 const { render } = ReactDOM;
@@ -19,6 +20,7 @@ class Join extends React.Component {
         super(props);
 
         this.state = {
+            path: '',   //이동할 경로
             join: {
                 email: '',              //회원가입 이메일
                 id: '',                 //회원가입 아이디
@@ -51,12 +53,14 @@ class Join extends React.Component {
     // 로그인 버튼 클릭
     clickLogin(e) {
         
-        location.href='./login.html';
+        // location.href='./login.html';
+        this.setState({path: '/login'})
     }
 
     //로그인 페이지(member메인 페이지)로 이동
     clickMemberMain(e) {
-        location.href='./login.html';
+        // location.href='./login.html';
+        this.setState({path: '/login'})
     }
 
     // 값변경 이벤트
@@ -81,6 +85,13 @@ class Join extends React.Component {
      *************************/
 
     render() {
+        //image 선언
+        const mApple = require('../../../images/apple.png');
+        const mGoogle = require('../../../images/google.png');
+        
+        if (this.state.path) {
+            return <Redirect to={this.state.path} />
+        }
         return (
             // <!------ 뒷배경 이미지 ------>
             <div className="back-box-img">
@@ -124,10 +135,10 @@ class Join extends React.Component {
                             <p className="login-p-down">앱을 다운로드 하세요.</p>
                             <div className="login-app">
                                 <a className="login-app-a" href="#">
-                                    <img className="login-app-img" alt="App store에서 이용가능" src="../../../assets/images/apple.png" />
+                                    <img className="login-app-img" alt="App store에서 이용가능" src={mApple} />
                                 </a>
                                 <a className="login-app-a" href="#">
-                                    <img className="login-app-img" alt="Google Play에서 이용가능" src="../../../assets/images/google.png" />
+                                    <img className="login-app-img" alt="Google Play에서 이용가능" src={mGoogle} />
                                 </a>
                             </div>
                         </div>

@@ -1,12 +1,12 @@
 /* 기본 import */
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import '../../../css/main.css'
 // import jQuery from 'jquery';
 
 /* 사용자가 만든 import */
-// import CommonSettingPop from '../common/commonSettingPop'; //콤보박스
+import CommonSettingPop from '../../common/commonSettingPop.jsx'; //콤보박스
 
 /* 전역변수 */
 // const { render } = ReactDOM;
@@ -37,6 +37,7 @@ class Main extends React.Component {
     render() {
         return (
             <div className="back-box-img">
+            
                 <MainHeader />
                 <MainBody />
             </div>
@@ -66,6 +67,7 @@ class MainHeader extends React.Component {
         super(props);
 
         this.state = {
+            sHide : ''
         };
     }
 
@@ -90,15 +92,34 @@ class MainHeader extends React.Component {
 
     //정보 setting 팝업 호출
     clickSetting(e) {
-        jQuery("#settingPopDiv").css("display", "");
+        // this.props.setShouldHide(false);
+        // {CommonSettingPop.setShouldHide(false)}
+        // this.setShouldHide(true);
+        this.setState({
+            sHide: 'N'
+        });
+        // this.props.action(false);
+        // CommonSettingPop.setShouldHide(false);
+        // jQuery("#settingPopDiv").css("display", "");
+
     }
     /*************************
      * render
      *************************/
 
     render() {
+        //image 선언
+        const mPlan = require('../../../images/btn/ariplanwhite2.png');
+        const mAdd = require('../../../images/btn/add2white2.png');
+        const mNotice = require('../../../images/btn/noticewhite2.png');
+        const mSetting = require('../../../images/btn/settingwhite2.png');
+
         return (
+
             <header className="header-main">
+                <CommonSettingPop
+                    sHide={this.state.sHide}
+                />
                 {/* <!-- <div className="header-div"> --> */}
                 <div className="header-div2">
                     <div className="header-logo main-logo">
@@ -111,22 +132,22 @@ class MainHeader extends React.Component {
                     {/* <!-- <div className="main-header-btn"> -->     */}
                         <div className="header-btn-div">
                             <a href="javascript:;" onClick={(e) => this.clickPlanList(e)}>
-                                <img className="header-btn-plan" src="../../../assets/images/btn/ariplanwhite2.png" />
+                                <img className="header-btn-plan" src={mPlan} />
                             </a>
                         </div>
                         <div className="header-btn-div">
                             <a href="javascript:;" onClick={(e) => this.clickPlanReg(e)}>
-                                <img className="header-btn-add" src="../../../assets/images/btn/add2white2.png" />
+                                <img className="header-btn-add" src={mAdd} />
                             </a>
                         </div>
                         <div className="header-btn-div">
                             <a href="#">
-                                <img className="header-btn-notice" src="../../../assets/images/btn/noticewhite2.png" />
+                                <img className="header-btn-notice" src={mNotice} />
                             </a>
                         </div>
                         <div className="header-btn-div">
                         <a href="javascript:;" onClick={(e) => this.clickSetting(e)}>
-                                <img className="header-btn-setting" src="../../../assets/images/btn/settingwhite2.png" />
+                                <img className="header-btn-setting" src={mSetting} />
                             </a>
                         </div>
                     </div>
@@ -218,6 +239,10 @@ class MainBody extends React.Component {
      *************************/
 
     render() {
+        //image 선언
+        const mDome = require('../../../images/btn/dome.png');
+        const mInter = require('../../../images/btn/Inter.png');
+
         return (
             <section className="main-section">
                 <article className="main-article">
@@ -248,7 +273,7 @@ class MainBody extends React.Component {
                                             <h1>국내여행</h1>
                                         </div>
                                         <div className="main-dome1-png">
-                                                <img src="../../../assets/images/btn/dome.png" />
+                                                <img src={mDome} />
                                         </div>
                                     </div>
                                 </div>
@@ -285,7 +310,7 @@ class MainBody extends React.Component {
                                             <h1>해외여행</h1>
                                         </div>
                                         <div className="main-inter1-png">
-                                                <img src="../../../assets/images/btn/Inter.png" />
+                                                <img src={mInter} />
                                         </div>
                                     </div>
                                 </div>
