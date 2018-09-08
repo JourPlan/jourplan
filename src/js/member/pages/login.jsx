@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import 'whatwg-fetch'
 import '../../../css/login.css'
-import { hot } from 'react-hot-loader'
+// import { hot } from 'react-hot-loader'
 import {Redirect, Link} from 'react-router-dom'
 
 /* 전역변수 */
@@ -166,8 +166,8 @@ Login.defaultProps = {
 };
 
 /* ReactElements 컴파일 */
-// export default Login;
-export default hot(module)(Login);
+export default Login;
+// export default hot(module)(Login);
 
 // const root = document.querySelector('div#mainDiv');
 // const root = document.getElementById("mainDiv")

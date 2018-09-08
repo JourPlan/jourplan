@@ -8,7 +8,7 @@ import {
 import main from './pages/main.jsx'
 
 
-const Member = () => (
+const Main = () => (
     <Router>
         <div>
             <Switch>
@@ -20,8 +20,7 @@ const Member = () => (
 
 
 const root = document.getElementById("mainDiv")
-ReactDOM.render(<Member />, root)
+ReactDOM.render(<Main />, root)
 
-// export default Member;
 
 

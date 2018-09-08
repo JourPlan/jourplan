@@ -1,10 +1,10 @@
 /* 기본 import */
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import jQuery from 'jquery';
+import {Redirect, Link,Switch} from 'react-router-dom'
 
-import CommonSettingPop from './commonSettingPop'; //commonSettingPop
+import CommonSettingPop from './commonSettingPop.jsx'; //commonSettingPop
 
 export default class CommonHeader extends React.Component {
     /* Render : componentWillMount() -> render() -> componentDidMount() */
@@ -12,12 +12,33 @@ export default class CommonHeader extends React.Component {
 
     constructor(props) {
         super(props);
-
         this.state = {
-            
+             path: ''
+            ,sHide : ''  //setting pop 호출
         };
         
         
+    }
+
+    /*************************
+    * React life cycle 정의 함수
+    *************************/
+
+    //컴포넌트가 마운트 되기 직전
+    componentWillMount(){
+
+    }
+    
+    //컴포넌트가 마운트 된 직후
+    componentDidMount(){
+        
+    }
+
+    //컴포넌트의 프로퍼티가 변경될 때
+    componentWillReceiveProps(nextProps){
+        this.setState({
+            sHide: 'Y'
+        });
     }
 
     /*************************
@@ -25,27 +46,36 @@ export default class CommonHeader extends React.Component {
     *************************/
     //메인 페이지로 이동
     clickMain(e) {
-        location.href='../main/main.html';
+        if (this.props.sDiv == 'main'){
+            this.setState({path: '/main'})
+        } else {
+            location.href='/main'
+        }
     }
 
     //나의 플랜 list로 이동
     clickPlanList(e) {
-        location.href='../plan/planList.html';
+        if (this.props.sDiv == 'plan'){
+            this.setState({path: '/planList'})
+        } else {
+            location.href='/planList'
+        }
     }
 
     //플랜 등록 page로 이동
-    clickPlanReg(e) {
-        location.href='../plan/planReg.html';
+    clickPlanSave(e) {
+        if (this.props.sDiv == 'plan'){
+                this.setState({path: '/planSave'})
+        } else {
+            location.href='/planSave'
+        }
     }
 
     //정보 setting 팝업 호출
     clickSetting(e) {
-        //jQuery("#settingPopDiv").css("display", "");
-        console.log("onclickHeader");
-        this.CommonSettingPop.setShouldHide(false);
-        //this.props.setHide(false);
-        //<CommonSettingPop setShouldHide = { (false) }/>
-        
+        this.setState({
+            sHide: 'N'
+        });
     }
 
 
@@ -54,8 +84,26 @@ export default class CommonHeader extends React.Component {
     * render
     *************************/
     render() {
+        //image 선언
+        const mPlan = require('../../images/btn/ariplanblack.png');
+        const mAdd = require('../../images/btn/add2black.png');
+        const mNotice = require('../../images/btn/noticeblack.png');
+        const mSetting = require('../../images/btn/settingblack.png');
+
+        if (this.state.path) {
+            return <Redirect to={this.state.path} />
+        }
+
         return (
-            <React.Fragment>
+            <div>
+                {/* {this.state.sHide == "Y" ? 
+                    "" 
+                    : */}
+                    <CommonSettingPop
+                        sHide={this.state.sHide}
+                        sDiv={this.props.sDiv}
+                    />
+                {/* } */}
                 <header >
                     <div className="header-div">
                         <div className="header-logo">
@@ -71,29 +119,28 @@ export default class CommonHeader extends React.Component {
                         <div className="header-btn">
                             <div className="header-btn-div">
                                 <a href="javascript:;" onClick={(e) => this.clickPlanList(e)}>
-                                    <img className="header-btn-plan" src="../../../assets/images/btn/ariplanblack.png" />
+                                    <img className="header-btn-plan" src={mPlan} />
                                 </a>
                             </div>
                             <div className="header-btn-div">
-                                <a href="javascript:;" onClick={(e) => this.clickPlanReg(e)}>
-                                    <img className="header-btn-add" src="../../../assets/images/btn/add2black.png" />
+                                <a href="javascript:;" onClick={(e) => this.clickPlanSave(e)}>
+                                    <img className="header-btn-add" src={mAdd} />
                                 </a>
                             </div>
                             <div className="header-btn-div">
                                 <a href="#">
-                                    <img className="header-btn-notice" src="../../../assets/images/btn/noticeblack.png" />
+                                    <img className="header-btn-notice" src={mNotice} />
                                 </a>
                             </div>
                             <div className="header-btn-div">
                                 <a href="javascript:;" onClick={(e) => this.clickSetting(e)}>
-                                    <img className="header-btn-setting" src="../../../assets/images/btn/settingblack.png" />
+                                    <img className="header-btn-setting" src={mSetting} />
                                 </a>
                             </div>
                         </div>
                     </div>
                 </header>
-                {/* <CommonSettingPop setShouldHide = { (val) => { this.setShouldHide(val); } } /> */}
-            </React.Fragment>
+            </div>
         );
     }
 }

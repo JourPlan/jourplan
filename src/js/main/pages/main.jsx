@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
+import {Redirect, Link} from 'react-router-dom'
 import '../../../css/main.css'
 // import jQuery from 'jquery';
 
@@ -67,7 +68,8 @@ class MainHeader extends React.Component {
         super(props);
 
         this.state = {
-            sHide : ''
+             path: ''
+            ,sHide : ''
         };
     }
 
@@ -77,31 +79,24 @@ class MainHeader extends React.Component {
 
     //메인 페이지로 이동
     clickMain(e) {
-        location.href='./main.html';
+        //this.setState({path: '/main'})
     }
 
     //나의 플랜 list로 이동
     clickPlanList(e) {
-        location.href='../plan/planList.html';
+        location.href='/planList'
     }
 
     //플랜 등록 page로 이동
-    clickPlanReg(e) {
-        location.href='../plan/planReg.html';
+    clickPlanSave(e) {
+        location.href='/planSave'
     }
 
     //정보 setting 팝업 호출
     clickSetting(e) {
-        // this.props.setShouldHide(false);
-        // {CommonSettingPop.setShouldHide(false)}
-        // this.setShouldHide(true);
         this.setState({
             sHide: 'N'
         });
-        // this.props.action(false);
-        // CommonSettingPop.setShouldHide(false);
-        // jQuery("#settingPopDiv").css("display", "");
-
     }
     /*************************
      * render
@@ -113,20 +108,23 @@ class MainHeader extends React.Component {
         const mAdd = require('../../../images/btn/add2white2.png');
         const mNotice = require('../../../images/btn/noticewhite2.png');
         const mSetting = require('../../../images/btn/settingwhite2.png');
+        
+        if (this.state.path) {
+            return <Redirect to={this.state.path} /> 
+        }
 
         return (
 
             <header className="header-main">
                 <CommonSettingPop
                     sHide={this.state.sHide}
-                    
                 />
                 {/* <!-- <div className="header-div"> --> */}
                 <div className="header-div2">
                     <div className="header-logo main-logo">
-                        <a href="javascript:;" onClick={(e) => this.clickMain(e)}>
+                        {/* <a href="javascript:;" onClick={(e) => this.clickMain(e)}> */}
                             <h1>JourPlan</h1>
-                        </a>
+                        {/* </a> */}
                     </div>
                     
                     <div className="main-header-btn">
@@ -137,7 +135,7 @@ class MainHeader extends React.Component {
                             </a>
                         </div>
                         <div className="header-btn-div">
-                            <a href="javascript:;" onClick={(e) => this.clickPlanReg(e)}>
+                            <a href="javascript:;" onClick={(e) => this.clickPlanSave(e)}>
                                 <img className="header-btn-add" src={mAdd} />
                             </a>
                         </div>
@@ -165,14 +163,14 @@ class MainHeader extends React.Component {
 MainHeader.propTypes = {
     clickMain: PropTypes.func,
     clickPlanList: PropTypes.func,
-    clickPlanReg: PropTypes.func,
+    clickPlanSave: PropTypes.func,
     clickSetting: PropTypes.func,
 };
 
 MainHeader.defaultProps = {
     clickMain: () => { },
     clickPlanList: () => { },
-    clickPlanReg: () => { },
+    clickPlanSave: () => { },
     clickSetting: () => { },
 };
 

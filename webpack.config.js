@@ -2,8 +2,10 @@ var path = require('path');
 
 module.exports = {
 	entry: {
-		 'member/member' : __dirname + '/src/js/member/member.jsx'
-		,'main/main' : __dirname + '/src/js/main/main.jsx'
+		 'member' : __dirname + '/src/js/member/member.jsx'
+		,'main' : __dirname + '/src/js/main/main.jsx'
+		,'setting' : __dirname + '/src/js/setting/setting.jsx'
+		,'plan' : __dirname + '/src/js/plan/plan.jsx'
 	},  
 	output: {
 		path: path.resolve(__dirname, 'public/js'),

@@ -1,17 +1,31 @@
-import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
-import { PlanList, About } from './pages';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import {
+  BrowserRouter as Router,
+  Route, Switch
+} from 'react-router-dom'
 
 
-class Plan extends Component {
-    render() {
-        return (
-            <div>
-                <Route exact path="/" component={Home}/>
-                <Route path="/about" component={About}/>
-            </div>
-        );
-    }
-}
+import planList from './pages/planList.jsx'
+import planSave from './pages/planSave.jsx'
+// import planDetail from './pages/planDetail.jsx'
+// import planSave from './pages/planSave.jsx'
 
-export default Plan;
+
+const Plan = () => (
+    <Router>
+        <div>
+            <Switch>
+                <Route path="/planList" component={planList}/>
+                <Route path="/planSave" component={planSave}/>
+            </Switch>
+        </div>
+    </Router>
+)
+
+
+const root = document.getElementById("mainDiv")
+ReactDOM.render(<Plan />, root)
+// export default Member;
+
+

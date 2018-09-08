@@ -2,6 +2,10 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
+import {
+    BrowserRouter as Router,
+    Route, Switch, Redirect, Link
+  } from 'react-router-dom'
 
 
 export default class CommonSettingPop extends React.Component {
@@ -12,7 +16,9 @@ export default class CommonSettingPop extends React.Component {
         super(props);
 
         this.state = {
-            shouldHide: 'Y'
+             path: ''
+            ,shouldHide: 'Y'
+            ,shouldSetting: ''
         };
         this.setShouldHide = this.setShouldHide.bind(this);
     }
@@ -33,8 +39,13 @@ export default class CommonSettingPop extends React.Component {
 
     //컴포넌트의 프로퍼티가 변경될 때
     componentWillReceiveProps(nextProps){
-        console.log("change == " + nextProps.sHide)
+        console.log("change1 == " + nextProps.sHide)
+        console.log("change2 == " + nextProps.sDiv)
         this.setShouldHide(nextProps.sHide)
+        // this.setState({
+        //     shouldSetting: nextProps.sDiv
+        // });
+
     }
 
     /*************************
@@ -43,51 +54,91 @@ export default class CommonSettingPop extends React.Component {
     
     //프로필 편집
     clickSettingProfile(e) {
-        location.href='/settingProfile';
+        // console.log("props == " + this.props.sDiv)
+        if (this.props.sDiv == 'setting'){
+            if (window.location.pathname != '/settingProfile'){
+                this.setState({path: '/settingProfile'})
+            } else {
+                this.setShouldHide('Y')
+            }
+        } else {
+            location.href='/settingProfile'
+        }
+        
     }
 
     //친구 관리
     clickSettingFriend(e) {
-        location.href='/settingFriend';
+        if (this.props.sDiv == 'setting'){
+            if (window.location.pathname != '/settingFriend'){
+                this.setState({path: '/settingFriend'})
+            } else {
+                this.setShouldHide('Y')
+            }
+        } else {
+            location.href='/settingFriend'
+        }
     }
 
     //친구요청 관리
     clickSettingFriendRequest(e) {
-        location.href='/settingFriendReq';
+        if (this.props.sDiv == 'setting'){
+            if (window.location.pathname != '/settingFriendReq'){
+                this.setState({path: '/settingFriendReq'})
+            } else {
+                this.setShouldHide('Y')
+            }
+        } else {
+            location.href='/settingFriendReq'
+        }
     }
 
     //비밀번호 변경
     clickSettingChangePW(e) {
-        location.href='../member/settingPassChg.html';
+        if (this.props.sDiv == 'setting'){
+            if (window.location.pathname != '/settingPassChg'){
+                this.setState({path: '/settingPassChg'})
+            } else {
+                this.setShouldHide('Y')
+            }
+        } else {
+            location.href='/settingPassChg'
+        }
     }
 
     //로그아웃
     clickSettingLogout(e) {
-        location.href='../member/login.html';
+        location.href='/login'
     }
 
     //취소
     clickSettingCancel(e) {
         //jQuery("#settingPopDiv").css("display", "none");
-        console.log("onclickPop"); 
-        this.setShouldHide('Y');
+        // console.log("onclickPop")
+        this.setShouldHide('Y')
     }; 
 
     setShouldHide(value) {
-        console.log("hide");
+        // console.log("hide")
         this.setState({
             shouldHide: value
-        });
-        return;
+        })
+        return
     };
 
     /*************************
     * render
     *************************/
     render() {
+        if (this.state.path) {
+            return <Redirect to={this.state.path} /> 
+        }
+
         return (
             <div>
-                <div className={this.state.shouldHide == "Y" ? "hidden" : "setting-pop-background"}>
+                <div className={this.state.shouldHide == "Y" ? "hidden" : "setting-pop-background"
+                            // || shouldH == "Y" ? "hidden" : "setting-pop-background"
+                }>
                     <div className="setting-pop-div">
                         <div className="setting-pop-center-box">
                             <div className="setting-pop-center-back">

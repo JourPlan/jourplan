@@ -2,7 +2,8 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import jQuery from 'jquery';
+import {Redirect, NavLink} from 'react-router-dom'
+// import jQuery from 'jquery';
 
 export default class CommonSettingMenu extends React.Component {
     /* Render : componentWillMount() -> render() -> componentDidMount() */
@@ -52,19 +53,23 @@ export default class CommonSettingMenu extends React.Component {
             <div className="setting-menu">
                 <ul className="setting-menu-ul">
                     <li>
-                        <a href="javascript:;" onClick={(e) => this.clickSetting(e,"profile")} className="setting-menu-a">
+                        {/* <a href="javascript:;" onClick={(e) => this.clickSetting(e,"profile")} className="setting-menu-a">
                             프로필 편집
-                        </a>
+                        </a> */}
+                        <NavLink to="/settingProfile" className="setting-menu-a" activeClassName="setting-menu-chk">프로필 편집</NavLink>
                         {/* <a href="./settingProfile.html" className="setting-menu-a setting-menu-chk">프로필 편집</a> */}
                     </li>
                     <li>
-                        <a href="./settingFriend.html" className="setting-menu-a">친구 관리</a>
+                        {/* <a href="./settingFriend.html" className="setting-menu-a">친구 관리</a> */}
+                        <NavLink to="/settingFriend" className="setting-menu-a" activeClassName="setting-menu-chk">친구 관리</NavLink>
                     </li>
                     <li>
-                        <a href="./settingFriendReq.html" className="setting-menu-a ">친구요청 관리</a>
+                        {/* <a href="./settingFriendReq.html" className="setting-menu-a ">친구요청 관리</a> */}
+                        <NavLink to="/settingFriendReq" className="setting-menu-a" activeClassName="setting-menu-chk">친구요청 관리</NavLink>
                     </li>
                     <li>
-                        <a href="./settingPassChg.html" className="setting-menu-a">비밀번호 변경</a>
+                        {/* <a href="./settingPassChg.html" className="setting-menu-a">비밀번호 변경</a> */}
+                        <NavLink to="/settingPassChg" className="setting-menu-a" activeClassName="setting-menu-chk">비밀번호 변경</NavLink>
                     </li>
                 </ul>
             </div>

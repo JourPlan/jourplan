@@ -16,6 +16,7 @@
     설명 : 메인쪽 로고
 */
 .main-logo h1{
+    cursor: Default;
     color: #ffffff;
 }
 
