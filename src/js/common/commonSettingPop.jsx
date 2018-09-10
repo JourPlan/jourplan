@@ -1,7 +1,7 @@
 /* 기본 import */
-import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
+import React, {Component} from 'react'
+import ReactDOM from 'react-dom'
+import PropTypes from 'prop-types'
 import {
     BrowserRouter as Router,
     Route, Switch, Redirect, Link

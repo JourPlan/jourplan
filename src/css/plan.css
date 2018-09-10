@@ -262,9 +262,9 @@ a.plan-map-a {
     color: #CECECE;
 }
 
-a.plan-map-a:visited {
+/* a.plan-map-a:visited {
     color: #CECECE;
-}
+} */
 
 a.plan-map-a:hover:not(.plan-map-chk) {
     color: #999;

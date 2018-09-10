@@ -3,6 +3,10 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import '../../../css/plan.css'
+import {
+    BrowserRouter as Router,
+    Route, Switch, Redirect, Link, NavLink
+  } from 'react-router-dom'
 
 /* 사용자가 만든 import */
 import CommonHeader from '../../common/commonHeader.jsx'; //공통 메뉴
@@ -13,6 +17,15 @@ import CommonHeader from '../../common/commonHeader.jsx'; //공통 메뉴
 /*************************
  * PlanSave
  *************************/
+const PlanDayList = ({match}) => {
+    return(
+        // <a className="plan-map-a plan-map-chk" href="#" >
+            <span className="plan-map-span">
+                Day - {match.params.day}
+            </span>
+        // </a>
+    )
+}
 
 class PlanSave extends React.Component {
     /* Render : componentWillMount() -> render() -> componentDidMount() */
@@ -206,29 +219,19 @@ class PlanSave extends React.Component {
                             </div>
                             {/* <!-- 지도 영역 --> */}
                             <div className="plan-map-div" >
-                                {/* <!-- day별 텝 영역 --> */}
-                                {this.state.planMapList.length > 0 ?
+                                <NavLink className="plan-map-a" activeClassName="plan-map-chk" to="/planSave">Day - 1</NavLink>
+                                {this.state.planMapList.length-1 > 0 ?
                                     this.state.planMapList.map((obj, index) => (
-                                        <div key="index">
-                                            {(index+1) == 1 ? 
-                                                <a className="plan-map-a plan-map-chk" href="#" >
-                                                    <span className="plan-map-span">
-                                                        Day - {index+1}
-                                                    </span>
-                                                </a>
-                                            :
-                                                <a className="plan-map-a" href="#" >
-                                                <span className="plan-map-span">
-                                                    Day - {index+1}
-                                                </span>
-                                                </a>
-                                            }
-                                        </div>
+                                        <NavLink key={index} className="plan-map-a" activeClassName="plan-map-chk" to={"/planSave/Day" + (index+1)}>Day - {index+1}</NavLink>
                                         )
                                     )
-                                :
-                                    ""
-                            }
+                                    :
+                                        ""
+                                }
+                                <Route
+                                    path="/planSave/:day"
+                                    Component={PlanDayList}
+                                />
                             </div>
                             
                                 {/* <!-- 실제 지도 영역 --> */}
