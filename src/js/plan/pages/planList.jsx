@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import '../../../css/plan.css'
 
+import {Redirect} from 'react-router-dom'
+
 /* 사용자가 만든 import */
 import CommonHeader from '../../common/commonHeader.jsx'; //공통 메뉴
 
@@ -22,6 +24,7 @@ class PlanListBody extends React.Component {
         super(props);
 
         this.state = {
+            path: '',
             profile: {
                 id: '',             //로그인 아이디
                 planCnt: '',        //plan 등록개수
@@ -47,6 +50,7 @@ class PlanListBody extends React.Component {
             title: '다낭 3박4일 여행',
             day: '2017-02-01 ~ 2017-03-04',
             content: '다낭 인터컨티넨탈, 멜리아 리조트, 쌀국수, 반미, 콩카페',
+            cnt:'2'
         });
 
         datas.push({
@@ -54,6 +58,7 @@ class PlanListBody extends React.Component {
             title: '스페인, 이탈리아, 프랑스, 영국, 독일 투어 유럽여행 :)',
             day: '2017-02-01 ~ 2017-03-04',
             content: '스페인, 이탈리아 영국 독일 유럽 등등 <br /> #스페인 #이탈리아 #프랑스 #영국 #독일',
+            cnt:'1'
         });
     
         this.setState({
@@ -62,10 +67,13 @@ class PlanListBody extends React.Component {
         });
     }
 
+    
     /*************************
      * 사용자 정의 함수
      *************************/
-
+    clickPlanDetail(e){
+        this.setState({path: '/plan/planDetail/' + e})
+    }
     
     /*************************
      * render
@@ -75,7 +83,10 @@ class PlanListBody extends React.Component {
         //image 선언
         const mUser = require('../../../images/btn/user.png')
         const mPlanListMenu = require('../../../images/btn/planlistmenu.png')
-
+        
+        if (this.state.path) {
+            return <Redirect to={this.state.path} /> 
+        }
         return (
             <div>
                 <CommonHeader
@@ -142,7 +153,7 @@ class PlanListBody extends React.Component {
                                             
                                             <div className="plan-list-title">
                                                 <div className="plan-title-div">
-                                                    <a href="./planDetail.html">
+                                                    <a href="javascript:;" onClick={(e) => this.clickPlanDetail(obj.cnt)}>
                                                         <h1>
                                                             {obj.title}
                                                         </h1>

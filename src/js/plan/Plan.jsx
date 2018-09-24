@@ -2,22 +2,23 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {
   BrowserRouter as Router,
-  Route, Switch
+  Route, Switch,browserHistory
 } from 'react-router-dom'
 
 
 import planList from './pages/planList.jsx'
 import planSave from './pages/planSave.jsx'
-// import planDetail from './pages/planDetail.jsx'
-// import planSave from './pages/planSave.jsx'
+import planDetail from './pages/planDetail.jsx'
 
 
 const Plan = () => (
-    <Router>
+    <Router history={browserHistory}>
         <div>
             <Switch>
-                <Route path="/planList" component={planList}/>
-                <Route path="/planSave" component={planSave}/>
+                <Route exact path="/plan" component={planList}/>
+                <Route path="/plan/planList" component={planList}/>
+                <Route path="/plan/planDetail/:cnt" component={planDetail}/>
+                <Route path="/plan/planSave" component={planSave}/>
             </Switch>
         </div>
     </Router>

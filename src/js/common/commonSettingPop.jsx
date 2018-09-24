@@ -56,13 +56,13 @@ export default class CommonSettingPop extends React.Component {
     clickSettingProfile(e) {
         // console.log("props == " + this.props.sDiv)
         if (this.props.sDiv == 'setting'){
-            if (window.location.pathname != '/settingProfile'){
-                this.setState({path: '/settingProfile'})
+            if (window.location.pathname != '/setting/settingProfile'){
+                this.setState({path: '/setting/settingProfile'})
             } else {
                 this.setShouldHide('Y')
             }
         } else {
-            location.href='/settingProfile'
+            location.href='/setting/settingProfile'
         }
         
     }
@@ -70,39 +70,39 @@ export default class CommonSettingPop extends React.Component {
     //친구 관리
     clickSettingFriend(e) {
         if (this.props.sDiv == 'setting'){
-            if (window.location.pathname != '/settingFriend'){
-                this.setState({path: '/settingFriend'})
+            if (window.location.pathname != '/setting/settingFriend'){
+                this.setState({path: '/setting/settingFriend'})
             } else {
                 this.setShouldHide('Y')
             }
         } else {
-            location.href='/settingFriend'
+            location.href='/setting/settingFriend'
         }
     }
 
     //친구요청 관리
     clickSettingFriendRequest(e) {
         if (this.props.sDiv == 'setting'){
-            if (window.location.pathname != '/settingFriendReq'){
-                this.setState({path: '/settingFriendReq'})
+            if (window.location.pathname != '/setting/settingFriendReq'){
+                this.setState({path: '/setting/settingFriendReq'})
             } else {
                 this.setShouldHide('Y')
             }
         } else {
-            location.href='/settingFriendReq'
+            location.href='/setting/settingFriendReq'
         }
     }
 
     //비밀번호 변경
     clickSettingChangePW(e) {
         if (this.props.sDiv == 'setting'){
-            if (window.location.pathname != '/settingPassChg'){
-                this.setState({path: '/settingPassChg'})
+            if (window.location.pathname != '/setting/settingPassChg'){
+                this.setState({path: '/setting/settingPassChg'})
             } else {
                 this.setShouldHide('Y')
             }
         } else {
-            location.href='/settingPassChg'
+            location.href='/setting/settingPassChg'
         }
     }
 

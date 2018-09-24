@@ -56,20 +56,20 @@ export default class CommonSettingMenu extends React.Component {
                         {/* <a href="javascript:;" onClick={(e) => this.clickSetting(e,"profile")} className="setting-menu-a">
                             프로필 편집
                         </a> */}
-                        <NavLink to="/settingProfile" className="setting-menu-a" activeClassName="setting-menu-chk">프로필 편집</NavLink>
+                        <NavLink to="/setting/settingProfile" className="setting-menu-a" activeClassName="setting-menu-chk">프로필 편집</NavLink>
                         {/* <a href="./settingProfile.html" className="setting-menu-a setting-menu-chk">프로필 편집</a> */}
                     </li>
                     <li>
                         {/* <a href="./settingFriend.html" className="setting-menu-a">친구 관리</a> */}
-                        <NavLink to="/settingFriend" className="setting-menu-a" activeClassName="setting-menu-chk">친구 관리</NavLink>
+                        <NavLink to="/setting/settingFriend" className="setting-menu-a" activeClassName="setting-menu-chk">친구 관리</NavLink>
                     </li>
                     <li>
                         {/* <a href="./settingFriendReq.html" className="setting-menu-a ">친구요청 관리</a> */}
-                        <NavLink to="/settingFriendReq" className="setting-menu-a" activeClassName="setting-menu-chk">친구요청 관리</NavLink>
+                        <NavLink to="/setting/settingFriendReq" className="setting-menu-a" activeClassName="setting-menu-chk">친구요청 관리</NavLink>
                     </li>
                     <li>
                         {/* <a href="./settingPassChg.html" className="setting-menu-a">비밀번호 변경</a> */}
-                        <NavLink to="/settingPassChg" className="setting-menu-a" activeClassName="setting-menu-chk">비밀번호 변경</NavLink>
+                        <NavLink to="/setting/settingPassChg" className="setting-menu-a" activeClassName="setting-menu-chk">비밀번호 변경</NavLink>
                     </li>
                 </ul>
             </div>

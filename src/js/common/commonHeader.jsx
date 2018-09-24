@@ -47,7 +47,9 @@ export default class CommonHeader extends React.Component {
     //메인 페이지로 이동
     clickMain(e) {
         if (this.props.sDiv == 'main'){
-            this.setState({path: '/main'})
+            if (window.location.pathname != '/main'){
+                this.setState({path: '/main'})
+            }
         } else {
             location.href='/main'
         }
@@ -56,18 +58,22 @@ export default class CommonHeader extends React.Component {
     //나의 플랜 list로 이동
     clickPlanList(e) {
         if (this.props.sDiv == 'plan'){
-            this.setState({path: '/planList'})
+            if (window.location.pathname != '/plan/planList' ){
+                this.setState({path: '/plan/planList'})
+            }
         } else {
-            location.href='/planList'
+            location.href='/plan/planList'
         }
     }
 
     //플랜 등록 page로 이동
     clickPlanSave(e) {
         if (this.props.sDiv == 'plan'){
-                this.setState({path: '/planSave'})
+            if (window.location.pathname != '/plan/planSave'){
+                this.setState({path: '/plan/planSave'})
+            }
         } else {
-            location.href='/planSave'
+            location.href='/plan/planSave'
         }
     }
 

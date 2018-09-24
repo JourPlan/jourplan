@@ -219,17 +219,19 @@ class PlanSave extends React.Component {
                             </div>
                             {/* <!-- 지도 영역 --> */}
                             <div className="plan-map-div" >
-                                <NavLink className="plan-map-a" activeClassName="plan-map-chk" to="/planSave">Day - 1</NavLink>
                                 {this.state.planMapList.length-1 > 0 ?
                                     this.state.planMapList.map((obj, index) => (
-                                        <NavLink key={index} className="plan-map-a" activeClassName="plan-map-chk" to={"/planSave/Day" + (index+1)}>Day - {index+1}</NavLink>
-                                        )
+                                        index == 0 ?
+                                        <NavLink exact={true} key={index} className="plan-map-a" activeClassName="plan-map-chk" to={"/plan/planSave"}>Day - {index+1}</NavLink>
+                                        : 
+                                        <NavLink key={index} className="plan-map-a" activeClassName="plan-map-chk" to={"/plan/planSave/Day" + (index+1)}>Day - {index+1}</NavLink>
+                                    )
                                     )
                                     :
                                         ""
                                 }
                                 <Route
-                                    path="/planSave/:day"
+                                    path="/plan/planSave/:day"
                                     Component={PlanDayList}
                                 />
                             </div>

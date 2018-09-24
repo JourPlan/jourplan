@@ -16,10 +16,11 @@ const Setting = () => (
     <Router>
         <div>
             <Switch>
-                <Route path="/settingFriend" component={settingFriend}/>
-                <Route path="/settingFriendReq" component={settingFriendReq}/>
-                <Route path="/settingPassChg" component={settingPassChg}/>
-                <Route path="/settingProfile" component={settingProfile}/>
+                <Route exact path="/setting" component={settingFriend}/>
+                <Route path="/setting/settingFriend" component={settingFriend}/>
+                <Route path="/setting/settingFriendReq" component={settingFriendReq}/>
+                <Route path="/setting/settingPassChg" component={settingPassChg}/>
+                <Route path="/setting/settingProfile" component={settingProfile}/>
             </Switch>
         </div>
     </Router>

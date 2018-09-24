@@ -4,9 +4,10 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import '../../../css/join.css'
 import {Redirect, Link} from 'react-router-dom'
+import 'whatwg-fetch';
 
 /* 전역변수 */
-const { render } = ReactDOM;
+// const { render } = ReactDOM;
 
 /*************************
  * Join
@@ -27,9 +28,34 @@ class Join extends React.Component {
                 password: '',           //회원가입 비밀번호
                 passwordConfirm: '',    //회원가입 비밀번호 확인
             }, // login ds
+            joins: [{  a: ''
+                     , b: ''
+                     , c: ''
+                   }],
+            mans:[]
         };
     }
 
+    componentDidMount(){
+        console.log("aaaaaaaaa11")
+		fetch('/member/memInfo',{
+			method: 'get',
+			dataType: 'json',
+			headers:{
+			'Accept': 'application/json',
+			'Content-Type': 'application/json'
+		}
+		})
+		.then((response) => response.json())
+		.then((responseData) => {
+            console.log("hi")
+			this.setState({mans: responseData})
+		})
+		.catch((error)=>{
+			console.log('Error fetching man',error)
+		});
+    }
+    
     /*************************
      * 사용자 정의 함수
      *************************/
@@ -37,12 +63,55 @@ class Join extends React.Component {
 
     //회원가입 버튼 클릭
     clickJoin(e) {
-        const joinEmail           = this.state.join.email;
-        const joinId              = this.state.join.id;
-        const joinPassword        = this.state.join.password;
-        const joinPasswordConfirm = this.state.join.passwordConfirm;
+        let joinEmail           = this.state.join.email
+        const joinId              = this.state.join.id
+        const joinPassword        = this.state.join.password
+        const joinPasswordConfirm = this.state.join.passwordConfirm
 
-        alert('회원가입 버튼 클릭');
+        let stJoin = this.state.join
+        let stJoins = this.state.joins
+
+        stJoins.push({
+             a: '첫번째a'
+            ,b: '첫번째b'
+            ,c: '첫번째c'
+        }) 
+
+        stJoins.push({
+            a: '두번째a'
+           ,b: '두번째b'
+           ,c: '두번째c'
+       }) 
+       this.setState({
+        joins: stJoins
+       })
+        fetch('/member/memInfo',{
+            method: 'post',
+            dataType: 'json',
+            headers:{
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            // body: JSON.stringify('1234')
+            // body: JSON.stringify(
+            //     {
+            //         email : 'lswwkd@naver.com'
+            //         ,id : 'Friday'
+            //     })
+
+            // stJoins 테스트
+            // body: JSON.stringify(stJoins)
+            // stJoin 테스트
+            // body: JSON.stringify(stJoin)
+            body: JSON.stringify(this.state.join)
+        }).then((response) => response.json())
+        .then((responseData) => {
+            this.setState({mans: responseData});
+        })
+        .catch((error)=>{
+            console.log('Error fetching man',error);
+        });
+        
         // if (loginId == 'admin' && loginPassword == 'admin'){
         //     location.href='../main/main.html';
         // } else {
@@ -65,7 +134,7 @@ class Join extends React.Component {
 
     // 값변경 이벤트
     onChangeHandler(e) {
-        let _state = this.state.login;
+        let _state = this.state.join;
 
         // console.log(_state);
         // console.log([e.target.name]);
@@ -76,7 +145,7 @@ class Join extends React.Component {
         // console.log(_state);
 
         this.setState({
-            login: _state
+            join: _state
         });
     }
 
@@ -92,6 +161,9 @@ class Join extends React.Component {
         if (this.state.path) {
             return <Redirect to={this.state.path} />
         }
+
+        
+
         return (
             // <!------ 뒷배경 이미지 ------>
             <div className="back-box-img">
@@ -110,15 +182,16 @@ class Join extends React.Component {
                         
                         {/* <!------ join 아이디,비번 영역 ------> */}
                         <div className="join-body">
-                            <input type="email" className="form-control login-id" placeholder="이메일 주소" />
-                            <input type="text" className="form-control login-password" placeholder="사용자 ID" />
-                            <input type="password" className="form-control login-password" placeholder="비밀번호" />
-                            <input type="password" className="form-control login-password" placeholder="비밀번호 확인" />
+                            <input type="email" name="email" className="form-control login-id" value={this.state.join.email} placeholder="이메일 주소" onChange={(e) => { this.onChangeHandler(e) }} />
+                            
+                            <input type="text" name="id" className="form-control login-password" value={this.state.join.id} placeholder="사용자 ID" onChange={(e) => { this.onChangeHandler(e) }} />
+                            <input type="password" name="password" className="form-control login-password" value={this.state.join.password} placeholder="비밀번호" onChange={(e) => { this.onChangeHandler(e) }} />
+                            <input type="password" name="passwordConfirm" className="form-control login-password" value={this.state.join.passwordConfirm} placeholder="비밀번호 확인" onChange={(e) => { this.onChangeHandler(e) }} />
                             <button type="button" className="form-btn bg-olive login-btn" onClick={(e) => this.clickJoin(e)}>회원 가입</button>
                             <hr className="login-bar" />
                             <div className="login-find-info">
                                 <input id="join-chk" type="checkbox" className="input_chk" />
-                                <label className="join-label" for="join-chk">
+                                <label className="join-label" htmlFor="join-chk">
                                         &nbsp;JourPlan의 약관 및 개인 정보 동의합니다.
                                 </label>
                             </div>
@@ -131,7 +204,7 @@ class Join extends React.Component {
                                 
                         </div>
                         {/* <!------ login app다운로드 영역 ------> */}
-                        <div className="join-footer">
+                        {/* <div className="join-footer">
                             <p className="login-p-down">앱을 다운로드 하세요.</p>
                             <div className="login-app">
                                 <a className="login-app-a" href="#">
@@ -141,6 +214,23 @@ class Join extends React.Component {
                                     <img className="login-app-img" alt="Google Play에서 이용가능" src={mGoogle} />
                                 </a>
                             </div>
+                        </div> */}
+
+
+                        
+                        <div className="join-footer">
+                            {
+                                this.state.mans.length > 0 ?
+                                    this.state.mans.map( (man, index) => (
+                                        <h1 key={index}>
+                                            {man.MEM_INFO_ID}
+                                            {man.MEM_EMAIL}
+                                        </h1>
+                                        )
+                                    )
+                                    :
+                                    <h1>조회한 결과가 없습니다.</h1>
+                            }
                         </div>
                     </div>
                 </div>

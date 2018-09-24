@@ -84,12 +84,12 @@ class MainHeader extends React.Component {
 
     //나의 플랜 list로 이동
     clickPlanList(e) {
-        location.href='/planList'
+        location.href='/plan/planList'
     }
 
     //플랜 등록 page로 이동
     clickPlanSave(e) {
-        location.href='/planSave'
+        location.href='/plan/planSave'
     }
 
     //정보 setting 팝업 호출

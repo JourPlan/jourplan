@@ -1,17 +1,25 @@
 
-const router = require('express').Router();
-const dbconn = require('../../config/db-info.js');
-const dbconnection = dbconn();
+const dMan = require('../../resource/main/man.js')
 
+exports.man = function(req, res){ 
+	console.log("routes man2")
+	dMan.man(req, (aa) => {
+		console.log("aa1 == " + aa[0].MEM_INFO_ID)
+		console.log("aa2 == " + JSON.stringify(aa))
+		
+		res.send(aa)
+	}) 
 
-router.get('/man', (req, res) =>{
+}
+
+// router.get('/man', (req, res) =>{
 	
-	console.log('man in');
-	dbconnection.query("SELECT * FROM mem_info_mng where MEM_INFO_ID = '99999998'", (err, rows) => {
-		if(err) throw err;
+// 	console.log('man in');
+// 	dbconnection.query("SELECT * FROM mem_info_mng where MEM_INFO_ID = '99999998'", (err, rows) => {
+// 		if(err) throw err;
 
-		res.send(rows);
-	});
-});
+// 		res.send(rows);
+// 	});
+// });
 
-module.exports = router;
+// module.exports = router;
