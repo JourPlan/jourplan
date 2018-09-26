@@ -2,6 +2,7 @@
 # js 표준 스타일 규약
  - 개발시에 끝에 ; 붙이지 않기.
  - == 대신 === 쓰기.
+ 
 # 2018-09-26
  - React -> node js 로 rest api (get, post) 호출하기.
  - React에서 dataset 배열, 단일행 넘기고 nodejs에서 받기.
@@ -67,6 +68,70 @@ exports.regMemInfo = function(req, res){
   console.log('memInfo id == ' + req.body.id)
 }
 ``` 
+
+# 2018-09-16
+ - 비지니스로직 패키지구조 변경.
+ app.js에서 controller.js를 호출하고 
+ 서비스 로직 흐름
+ app.js > controller.js > routes안에 있는 service js파일 호출(routes > member > join.js) > 쿼리 호출 (resource < member > join.js)
+ 
+```
+- server
+  > resource
+    > member
+      > login.js
+      > join.js
+    > plan
+  > routes
+    > member
+      > login.js
+      > join.js
+    > plan
+    > controller.js
+  > app.js
+```
+app.js 에서 controller를 호출한다.
+```
+let apiController = require('./routes/controller')
+app.use('/', apiController)
+```
+controller.js에서 route 나누기.
+```
+const router = require('express').Router()
+//member
+const routJoin = require('./member/join')
+const routLogin = require('./member/login')
+
+//rest api 호출
+router.post('/member/memInfo', routJoin.regMemInfo)     //회원등록
+router.get('/member/memInfo', routLogin.getMemInfo)     //회원조회
+```
+routes 호출
+```
+exports.regMemInfo = function(req, res){ 
+	let sJoin = req.body
+	dbJoin.regMemInfo(sJoin,(bb) =>{
+		console.log("end")
+	})
+}
+```
+resource 호출
+```
+exports.regMemInfo = function(sJoin, callback){ 
+    console.log('resource 등록 JOIN');
+    console.log('resource == ' + sJoin.email);
+    
+    dbconnection.query(
+        "SELECT *                           "+ 
+        "  FROM MEM_INFO_MNG                "+
+        " WHERE MEM_INFO_ID = '99999999'    "
+        , (err, rows) => {
+            if(err) throw err
+            callback(rows)
+            // res.send(rows)
+	})
+}
+```
 
 # 2018-09-10
  - 새로고침시 에러 처리.
