@@ -67,3 +67,31 @@ exports.regMemInfo = function(req, res){
   console.log('memInfo id == ' + req.body.id)
 }
 ``` 
+
+# 2018-09-10
+ - 새로고침시 에러 처리.
+ app.js 수정
+ 
+ 기존에 
+```
+const cSetting = express.static(__dirname + "/../public/views/setting.html")	//setting
+app.use('/settingFriend', cSetting)
+app.use('/settingFriendReq', cSetting)
+```
+이런식으로 처리했는데 settingFriend랑 settingFriendReq에서 새로고침 했을때 같은 html을 바라보도록
+html 셋팅을 해줘야하는데 소스가 길어지니
+```
+const cSetting = express.static(__dirname + "/../public/views/setting.html")	//setting
+app.use('/setting/settingFriend', cSetting)
+app.use('/setting/settingFriendReq', cSetting)
+```
+이런식으로 변경 후 setting이 들어오면 자동적으로 setting.html을 바라보도록 수정. (나머지 main, plan, member도 처리해야함)
+ ```
+app.get('*', (req, res, next) => {
+	if (req.path.split('/')[1] === 'setting') {
+		res.sendFile(path.resolve(__dirname, "../public/views/setting.html"))
+	}
+})
+ ```
+ 
+ 
