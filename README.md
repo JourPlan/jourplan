@@ -10,7 +10,8 @@
  배열 dataset, 단일행 dataset 넘기기.
  
  React
- constructor(props) {
+ ```
+ constructor(props) {  
         super(props);
     this.state = {
             join: {
@@ -53,8 +54,9 @@
             // body: JSON.stringify(stJoin)
             // body: JSON.stringify(this.state.join)
         })
-
+```
 nodejs
+```
 exports.regMemInfo = function(req, res){ 
   //배열 받기.
   console.log('memInfo 00 == ' + JSON.stringify(req.body))
@@ -64,4 +66,4 @@ exports.regMemInfo = function(req, res){
   console.log('memInfo email == ' + req.body.email)
   console.log('memInfo id == ' + req.body.id)
 }
- 
+``` 
