@@ -4,6 +4,14 @@
  - == 대신 === 쓰기.
  
 # 2018-09-26
+ - Query를 xml로 관리하기.
+
+xml파서 설치.
+```
+npm i -g xml-digester --save
+```
+
+# 2018-09-25
  - React -> node js 로 rest api (get, post) 호출하기.
  - React에서 dataset 배열, 단일행 넘기고 nodejs에서 받기.
  
