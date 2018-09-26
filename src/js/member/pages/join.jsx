@@ -101,6 +101,7 @@ class Join extends React.Component {
 
             // stJoins 테스트
             // body: JSON.stringify(stJoins)
+            // body: JSON.stringify(this.state.joins)
             // stJoin 테스트
             // body: JSON.stringify(stJoin)
             body: JSON.stringify(this.state.join)

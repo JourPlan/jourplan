@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import {Redirect, Link} from 'react-router-dom'
 import '../../../css/main.css'
+import 'whatwg-fetch';
 // import jQuery from 'jquery';
 
 /* 사용자가 만든 import */
@@ -70,6 +71,16 @@ class MainHeader extends React.Component {
         this.state = {
              path: ''
             ,sHide : ''
+            ,join: {
+                email: '',              //회원가입 이메일
+                id: '',                 //회원가입 아이디
+                password: '',           //회원가입 비밀번호
+                passwordConfirm: '',    //회원가입 비밀번호 확인
+            }, // login ds
+            joins: [{  a: ''
+                     , b: ''
+                     , c: ''
+                   }],
         };
     }
 
@@ -79,6 +90,49 @@ class MainHeader extends React.Component {
 
     //메인 페이지로 이동
     clickMain(e) {
+        
+        let stJoins = this.state.joins
+        stJoins.push({
+            a: '첫번째a'
+           ,b: '첫번째b'
+           ,c: '첫번째c'
+       }) 
+
+       stJoins.push({
+           a: '두번째a'
+          ,b: '두번째b'
+          ,c: '두번째c'
+      }) 
+      this.setState({
+       joins: stJoins
+      })
+        fetch('/member/memInfo',{
+            method: 'post',
+            dataType: 'json',
+            headers:{
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            // body: JSON.stringify('1234')
+            // body: JSON.stringify(
+            //     {
+            //         email : 'lswwkd@naver.com'
+            //         ,id : 'Friday'
+            //     })
+
+            // stJoins 테스트
+            body: JSON.stringify(stJoins)
+            // body: JSON.stringify(this.state.join)
+            // stJoin 테스트
+            // body: JSON.stringify(stJoin)
+            // body: JSON.stringify(this.state.join)
+        }).then((response) => response.json())
+        .then((responseData) => {
+            this.setState({mans: responseData});
+        })
+        .catch((error)=>{
+            console.log('Error fetching man',error);
+        });
         //this.setState({path: '/main'})
     }
 
@@ -122,9 +176,9 @@ class MainHeader extends React.Component {
                 {/* <!-- <div className="header-div"> --> */}
                 <div className="header-div2">
                     <div className="header-logo main-logo">
-                        {/* <a href="javascript:;" onClick={(e) => this.clickMain(e)}> */}
+                        <a href="javascript:;" onClick={(e) => this.clickMain(e)}>
                             <h1>JourPlan</h1>
-                        {/* </a> */}
+                        </a>
                     </div>
                     
                     <div className="main-header-btn">

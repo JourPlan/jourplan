@@ -81,7 +81,7 @@ app.get('*', (req, res, next) => {
 	} else if (req.path.split('/')[1] === 'plan') {
 		res.sendFile(path.resolve(__dirname, "../public/views/plan.html"))
 	}
-});
+})
 
 /************************************* 
  *	Express server Start
