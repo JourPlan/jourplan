@@ -90,17 +90,6 @@ exports.regMemInfo = function(sJoin, callback){
             callback(rows)
             // res.send(rows)
 	})
-	// dbconnection.query(
-    //     " INSERT INTO MEM_INFO_MNG( "+
-    //     "" +
-    //     ") VALUES (" +
 
-    //     ")                           "+ 
-    //     "  FROM MEM_INFO_MNG                "+
-    //     " WHERE MEM_INFO_ID = '" + req + "'    "
-    //     , (err, rows) => {
-    //         if(err) throw err
-    //         callback(rows)
-    //         // res.send(rows)
-	// })
 }
+

@@ -107,10 +107,13 @@ class Join extends React.Component {
             body: JSON.stringify(this.state.join)
         }).then((response) => response.json())
         .then((responseData) => {
-            this.setState({mans: responseData});
+            console.log('ddddddd')
+            console.log('responseData1 === '+ responseData.message)
+            this.setState({mans: responseData})
         })
         .catch((error)=>{
-            console.log('Error fetching man',error);
+            alert(error)
+            console.log('Error fetching man',error)
         });
         
         // if (loginId == 'admin' && loginPassword == 'admin'){

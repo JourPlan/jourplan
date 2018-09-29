@@ -15,7 +15,7 @@ const dbJoin = require('../../resource/member/join.js')
  *  regMemInfo
  *  회원정보 등록
 *************************************/
-exports.regMemInfo = function(req, res){ 
+exports.regMemInfo = function(req, res, next){ 
 	
 	// console.log('=== memInfo === ' + req.query.stJoins)
 	// console.log('memInfo 00 == ' + JSON.stringify(req.body))
@@ -24,11 +24,23 @@ exports.regMemInfo = function(req, res){
 
 	console.log('memInfo email == ' + req.body.email)
 	console.log('memInfo id == ' + req.body.id)
-	//regmeminfo test
 	let sJoin = req.body
-	dbJoin.regMemInfo(sJoin,(bb) =>{
-		console.log("end")
+
+	dbLogin.getMemInfo(sJoin, (memInfo) => {
+		if (memInfo.length === 1) {
+			console.log("존재함.")
+			// return next(new Error('이메일 또는 사용자ID가 존재합니다.'))
+			// res.send(new Error('이메일 또는 사용자ID가 존재합니다.'))
+			// throw new Error('이메일 또는 사용자ID가 존재합니다.')
+			next(new Error('이메일 또는 사용자ID가 존재합니다.'))
+		} else {
+			console.log("존재안함.")
+
+		}
 	})
+	// dbJoin.regMemInfo(sJoin,(bb) =>{
+	// 	console.log("end")
+	// })
 
 	// let sMemInfoId = "99999999"
 	// dbLogin.getMemInfo(sMemInfoId, (aa) => {

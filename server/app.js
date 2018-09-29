@@ -83,6 +83,11 @@ app.get('*', (req, res, next) => {
 	}
 })
 
+app.use(function(error, req, res, next){
+	// console.error(error.stack)
+	// res.status(500).send(error.message)
+	res.json({message: error.message})
+})
 /************************************* 
  *	Express server Start
 *************************************/
