@@ -298,7 +298,7 @@ a.plan-map-chk span {
 
 
 .plan-map-real {
-    background: url("../images/map.png") no-repeat;
+    /* background: url("../images/map.png") no-repeat; */
 
     /* clear: both; */
     position: relative;

@@ -8,6 +8,9 @@ import {
     Route, Switch, Redirect, Link, NavLink
   } from 'react-router-dom'
 
+  import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react'
+
+
 /* 사용자가 만든 import */
 import CommonHeader from '../../common/commonHeader.jsx'; //공통 메뉴
 
@@ -50,7 +53,7 @@ class PlanSave extends React.Component {
     }
 
     //javascript onload와 같이 render 전에 타는 내장함수
-    componentWillMount(){
+    componentWillMount(){ 
          
         let baseData = this.state.planBase; //여행 base
         let mapDatas = [];  //여행 Map 리스트
@@ -66,7 +69,7 @@ class PlanSave extends React.Component {
                         +   '\n#호이안 #인터컨티넨탈 #쌀국수 #반세오6222'
                         +   '\n#호이안 #인터컨티넨탈 #쌀국수 #반세오6222'; 
         baseData.fromDt = '2018-03-01';
-        baseData.toDt = '2018-03-04';
+        baseData.toDt = '2018-03-04'; 
         /*
             division = M,S (M 이면 MAP, S면 Schedule이다.)
             title = 여행 제목
@@ -238,6 +241,17 @@ class PlanSave extends React.Component {
                             
                                 {/* <!-- 실제 지도 영역 --> */}
                             <div className="plan-map-real">
+                                <Map google={this.props.google} zoom={14}>
+                            
+                                    <Marker onClick={this.onMarkerClick}
+                                            name={'Current location'} />
+                            
+                                    <InfoWindow onClose={this.onInfoWindowClose}>
+                                        {/* <div>
+                                            <h1>{this.state.selectedPlace.name}</h1>
+                                        </div> */}
+                                    </InfoWindow>
+                                </Map>
                                 {/* <!-- 지도에서 핀찍었을 경우 오른쪽에서 나오는 list 영역 --> */}
                                 <div className={this.state.shouldHide ? "hidden" : "plan-map-list"  }>
                                     {/* <!-- 핀에 대한 정보 --> */}
@@ -1030,8 +1044,13 @@ PlanSave.defaultProps = {
 };
 
 /* ReactElements 컴파일 */
+export default GoogleApiWrapper({
+    apiKey: ('AIzaSyBDcU0ATxSjRDcUu-3ta1I9H-mIhvuy3MM'),
+    language: 'ko'
+  })(PlanSave)
+  
 
-export default PlanSave;
+//export default PlanSave;
 // const rootHeader = document.querySelector('div#headerDiv');
 // render(<CommonHeader/>, rootHeader);
 

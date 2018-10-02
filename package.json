@@ -39,6 +39,8 @@
     "babel-polyfill": "~6.7.*",
     "body-parser": "^1.17.1",
     "express": "^4.14.1",
+    "google-map-react": "^1.0.8",
+    "google-maps-react": "^2.0.2",
     "mysql": "^2.11.1",
     "prop-types": "^15.6.2",
     "react": "^15.5.4",
